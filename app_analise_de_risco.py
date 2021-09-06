@@ -1,0 +1,202 @@
+
+#______________________________________________________________________________________________________________________
+
+## IMPORTA BIBLIOTECAS PARA O PYTHON
+
+import pandas as pd
+import re
+import streamlit as st
+import difflib
+import unidecode
+import os
+import shapely.wkt
+import webbrowser
+
+#______________________________________________________________________________________________________________________
+
+## EXTRAI INFORMAÇÕES DO APROVA ##
+
+# Input box do aprova
+texto_aprova = st.sidebar.text_input('CTRL+  V da página do APROVA:','')
+
+if texto_aprova != "":
+    #Separa o texto do aprova entre os trechos viabilidade e estabelecimento
+    texto_aprova_split = re.sub(' +', ' ',texto_aprova).split(' ')
+
+    itens_analise=['Viabilidade','Estabelecimento','Bairro','Logradouro','Número','Social', 'Nome']
+    index_aprova1=texto_aprova_split.index('Viabilidade')
+    index_aprova2=texto_aprova_split.index('Estabelecimento')
+
+    trecho_aprova = " ".join(texto_aprova_split[index_aprova1:index_aprova2])
+
+    #Separa o texto do aprova em espaços para retornar a razão social
+    itens_analise=['Identificação','edificação']
+    index_aprova3=texto_aprova_split.index('Identificação')
+    index_aprova4=texto_aprova_split.index('edificação')
+    trecho_aprova_split2 = texto_aprova_split[index_aprova3:index_aprova4]
+    itens_analise=['Social','Nome']
+    index_aprova5=trecho_aprova_split2.index('Social')+1
+    index_aprova6=trecho_aprova_split2.index('Nome')
+    razao_social_aprova = " ".join(trecho_aprova_split2[index_aprova5:index_aprova6])
+
+    #Separa o texto do aprova em espaços para retornar o endereço
+    itens_analise=['REGIN','Identificação']
+    index_aprova7=texto_aprova_split.index('REGIN')
+    index_aprova8=texto_aprova_split.index('Identificação')
+    trecho_aprova_split3 = texto_aprova_split[index_aprova7:index_aprova8]
+    itens_analise=['Bairro','Logradouro']
+    index_aprova9=trecho_aprova_split3.index('Bairro')+1
+    index_aprova10=trecho_aprova_split3.index('Logradouro')
+    index_aprova11=trecho_aprova_split3.index('Logradouro')+1
+    index_aprova12=trecho_aprova_split3.index('Número')
+    index_aprova13=trecho_aprova_split3.index('Predial')+1
+    index_aprova14=trecho_aprova_split3.index('CEP')
+    bairro_aprova = " ".join(trecho_aprova_split3[index_aprova9:index_aprova10])
+    logradouro_aprova = " ".join(trecho_aprova_split3[index_aprova11:index_aprova12])
+    numero_aprova = " ".join(trecho_aprova_split3[index_aprova13:index_aprova14])
+
+    #Extrai as informações do trecho
+    cnaes_aprova = re.findall(r'\d\d.\d\d-\d-\d\d', texto_aprova)
+    cnaes_aprova=list(set(cnaes_aprova))
+    cnpj_aprova = re.findall(r'\d\d.\d\d\d.\d\d\d/\d\d\d\d-\d\d', texto_aprova)
+
+else:
+    cnpj_aprova =""
+#______________________________________________________________________________________________________________________
+
+
+## EXTRAI INFORMAÇÕES DO REGIN ##
+
+# Input box do REGIN
+texto_regin = st.sidebar.text_input('CTRL + V do REGIN:','')
+
+if texto_regin != "":
+    #Extrai informações do REGIN
+
+    texto_regin_split = re.sub(' +', ' ',texto_regin).split(' ')
+
+    itens_analise=['Código','NOMES']
+    index1=texto_regin_split.index('Código')
+    index2=texto_regin_split.index('NOMES')
+
+    trecho_regin_cnaes = " ".join(texto_regin_split[index1:index2])
+    cnaes_regin = re.findall(r'\d\d\d\d\d\d\d', trecho_regin_cnaes)
+
+    cnaes_formatados_regin=[]
+    count=0
+    for cnae in cnaes_regin:
+    
+        format_cnae = cnae[:2]+'.'+cnae[2:4]+'-'+cnae[4:5]+'-'+cnae[5:]
+        cnaes_formatados_regin.append(format_cnae)
+        count+=1
+
+    index3=texto_regin_split.index('LOCALIZAÇÃO')+1
+    index4=texto_regin_split.index('ITAJAI')
+    endereco_regin = " ".join(texto_regin_split[index3:index4])
+
+#______________________________________________________________________________________________________________________
+
+## EXTRAI INFORMAÇÕES DO CNPJ
+
+# Input box do CNPJ
+texto_cnpj = st.sidebar.text_input('CTRL + V do CNPJ:','')
+
+if texto_cnpj != "":
+    cnaes_cnpj = re.findall(r'\d\d.\d\d-\d-\d\d', texto_cnpj)
+    cnae_principal_cnpj=cnaes_cnpj[0]
+    numero_cnpj = re.findall(r'\d\d.\d\d\d.\d\d\d/\d\d\d\d-\d\d', texto_cnpj)
+    texto_cnpj_split = re.sub(' +', ' ',texto_cnpj).split(' ')
+
+    #Separa o cartão cnpj em elementos separado por espaços para extração de textos específicos
+    itens_analise=['EMPRESARIAL','TÍTULO', 'LOGRADOURO','NÚMERO']
+    index_cnpj1=texto_cnpj_split.index('EMPRESARIAL')+1
+    index_cnpj2=texto_cnpj_split.index('TÍTULO')
+    razao_social_cnpj = " ".join(texto_cnpj_split[index_cnpj1:index_cnpj2])
+
+    #Separa o primeiro split para puxar o endereço
+    index_cnpj3=texto_cnpj_split.index('NATUREZA')+1
+    index_cnpj4=texto_cnpj_split.index('ESPECIAL')
+    texto_cnpj_split2 = texto_cnpj_split[index_cnpj3:index_cnpj4] #função que separa o primeiro split
+    index_cnpj5=texto_cnpj_split2.index('LOGRADOURO')+1
+    index_cnpj6=texto_cnpj_split2.index('NÚMERO')
+    logradouro_cnpj = " ".join(texto_cnpj_split2[index_cnpj5:index_cnpj6])
+    index_cnpj7=texto_cnpj_split2.index('NÚMERO')+1
+    index_cnpj8=texto_cnpj_split2.index('COMPLEMENTO')
+    numeropredial_cnpj = " ".join(texto_cnpj_split2[index_cnpj7:index_cnpj8])
+    index_cnpj9=texto_cnpj_split2.index('COMPLEMENTO')+1
+    index_cnpj10=texto_cnpj_split2.index('CEP')
+    complemento_cnpj = " ".join(texto_cnpj_split2[index_cnpj9:index_cnpj10])
+    index_cnpj11=texto_cnpj_split2.index('BAIRRO/DISTRITO')+1
+    index_cnpj12=texto_cnpj_split2.index('MUNICÍPIO')
+    bairro_cnpj = " ".join(texto_cnpj_split2[index_cnpj11:index_cnpj12])
+
+else:
+    razao_social_cnpj = ""
+
+#_____________________________________________________________________________________________________________________
+
+##ESTRUTURA PAGINA
+
+st.title('PMI - ANÁLISE DE RISCO')
+
+try:
+    if texto_aprova != "":
+        #if texto_aprova != "" and texto regin != "" and texto_cnpj != "":
+        #Printa o resumo do processo
+        st.subheader('Resumo do processo')
+        st.text('RAZÃO SOCIAL: '+razao_social_cnpj+', CNPJ: '+str(cnpj_aprova))
+        st.text(logradouro_cnpj+', '+bairro_aprova+', '+numero_aprova)
+        st.markdown(str('https://www.google.com/maps/place/')+logradouro_aprova+str(',+')+str(numero_aprova)+str('+,+Itaja%C3%AD+-+SC'))
+
+        #Printa a verificação do cnpj
+        st.subheader('Verificação do CNPJ')
+
+        if (numero_cnpj == cnpj_aprova):
+            st.text('Ok! Número CNPJ inserido corretamente no Aprova.')
+        else:
+            st.text('VERIFICAR! Número CNPJ NÃO coincide')
+
+        #Printa a verificação da razão social
+        st.subheader('Verificação da RAZÃO SOCIAL')
+        if (razao_social_cnpj == razao_social_aprova):
+            st.text('Ok! A razão social inserida corretamento no Aprova.')
+        else:
+            st.text('VERIFICAR! A razão social NÃO coincide com o Aprova.')
+                
+        #Printa a verificação do endereço
+        st.subheader('Verificação do ENDEREÇO')
+        st.text('** Verifique manualmente os endereços abaixo:')
+        st.text('Endereço no APROVA: '+logradouro_aprova+', '+bairro_aprova+', '+numero_aprova)
+        st.text('Endereço no CNPJ: '+logradouro_aprova+', '+bairro_cnpj+', '+numeropredial_cnpj+', '+complemento_cnpj)
+        st.text('Endereço no REGIN: '+endereco_regin)
+
+        #Printa a verificação dos cnaes
+        st.subheader('Verificação dos CNAES')
+        #st.text('cnae principal '+cnae_principal_cnpj)
+        if (set(cnaes_cnpj) == set(cnaes_formatados_regin)):
+             st.text('Conferência dos CNAEs do CNPJ com o REGIN: Ok! CNAES coincidem.')
+        else:
+            st.text('Conferência dos CNAEs do CNPJ com o REGIN: VERIFICAR! CNAES não coincidem.')
+
+        if (set(cnaes_cnpj) == set(cnaes_aprova)):
+             st.text('Conferência dos CNAEs do CNPJ com o APROVA: Ok! CNAES coincidem.')
+        else:
+            st.text('Conferência dos CNAEs do CNPJ com o APROVA: VERIFICAR! CNAES não coincidem.')
+
+        if (set(cnaes_formatados_regin) == set(cnaes_aprova)):
+            st.text('Conferência dos CNAEs do APROVA com o REGIN: Ok! CNAES coincidem.')
+        else:
+            st.text('Conferência dos CNAEs do APROVA com o REGIN: VERIFICAR! CNAES não coincidem.')
+
+        st.text('CNAES no APROVA')
+        st.dataframe(cnaes_aprova)
+        st.text('CNAES no CNPJ')
+        st.dataframe(cnaes_cnpj)
+        st.text('CNAES no REGIN')
+        st.dataframe(cnaes_formatados_regin)
+
+    else:
+       st.text('Copie e cole as informações na barra lateral esquerda.')
+except:
+  # Prevent the error from propagating into your Streamlit app.
+  pass
