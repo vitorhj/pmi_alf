@@ -164,7 +164,7 @@ try:
         st.subheader('Resumo do processo')
         st.text('RAZÃO SOCIAL: '+razao_social_cnpj+', CNPJ: '+cnpj_aprova[0])
         st.text(logradouro_cnpj+', '+bairro_cnpj+', '+numeropredial_cnpj+', '+complemento_cnpj)
-        st.text('INSCRIÇÃO IMOBILIÁRIA: '+str(inscricao_aprova)+' , copie cole na Geo para a consulta do grau de risco')
+        st.text('INSCRIÇÃO IMOBILIÁRIA: '+str(inscricao_aprova[0:15])+' , copie cole na Geo para a consulta do grau de risco')
         endereço_split = re.sub(' +', ' ',logradouro_aprova).split(' ')
         logradouro_google = "+".join(endereço_split)
         st.markdown(str('https://www.google.com/maps/place/')+logradouro_google+str(',+')+str(numero_aprova)+str('+,+Itaja%C3%AD+-+SC'))
