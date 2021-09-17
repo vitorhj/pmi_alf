@@ -22,15 +22,8 @@ if texto_aprova != "":
     index_aprova1=texto_aprova_split.index('Viabilidade')
     index_aprova2=texto_aprova_split.index('Estabelecimento')
     
-    #index_aprova3=texto_aprova_split.index('PRINT')
-    #index_aprova4=texto_aprova_split.index('DEFERIDO')
-    #incricao_aprova = " ".join(texto_aprova_split[index_aprova3 :index_aprova4])
+    ##Inscrição imobiliária no Aprova Digital
     
-    #st.text(index_aprova3)
-    #st.text(index_aprova4)
-    #st.text(incricao_aprova)
-    
-    #incricao_aprova = " ".join(texto_aprova_split[index_aprova3 + 1:index_aprova3 + 2])
     inscricao_aprova = re.findall(r'\d\d\d.\d\d\d.\d\d.\d\d\d\d.\d\d\d\d.\d\d\d', texto_aprova)
     st.text(inscricao_aprova[0])
 
@@ -171,6 +164,7 @@ try:
         st.subheader('Resumo do processo')
         st.text('RAZÃO SOCIAL: '+razao_social_cnpj+', CNPJ: '+cnpj_aprova[0])
         st.text(logradouro_cnpj+', '+bairro_cnpj+', '+numeropredial_cnpj+', '+complemento_cnpj)
+        st.text('INSCRIÇÃO IMOBILIÁRIA: '+inscricao_aprova+' , 'copie cole na Geo para a consulta do grau de risco')
         endereço_split = re.sub(' +', ' ',logradouro_aprova).split(' ')
         logradouro_google = "+".join(endereço_split)
         st.markdown(str('https://www.google.com/maps/place/')+logradouro_google+str(',+')+str(numero_aprova)+str('+,+Itaja%C3%AD+-+SC'))
