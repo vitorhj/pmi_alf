@@ -22,6 +22,7 @@ if texto_aprova != "":
     index_aprova1=texto_aprova_split.index('Viabilidade')
     index_aprova2=texto_aprova_split.index('Estabelecimento')
     index_aprova3=texto_aprova_split.index('PARTE')
+    index_aprova3=index_aprova3[0]
     st.text(index_aprova3)
     incricao_aprova = " ".join(texto_aprova_split[index_aprova3 + 1:index_aprova3 + 2])
     #inscricao_aprova = re.findall(r'\d\d\d.\d\d\d.\d\d.\d\d\d\d', texto_aprova)
