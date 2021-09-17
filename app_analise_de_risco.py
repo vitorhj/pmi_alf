@@ -21,9 +21,12 @@ if texto_aprova != "":
     itens_analise=['Viabilidade','Estabelecimento','Bairro','Logradouro','Número','Social', 'Nome']
     index_aprova1=texto_aprova_split.index('Viabilidade')
     index_aprova2=texto_aprova_split.index('Estabelecimento')
-    index_aprova3=texto_aprova_split.index('PARTE')
-    #index_aprova3=index_aprova3[0]
-    st.dataframe(index_aprova3)
+    
+    index_aprova3=texto_aprova_split.index('PRINT')
+    index_aprova4=texto_aprova_split.index('DEFERIDO')
+    incricao_aprova = " ".join(texto_aprova_split[index_aprova3 :index_aprova4])
+    st.text(incricao_aprova)
+    
     #incricao_aprova = " ".join(texto_aprova_split[index_aprova3 + 1:index_aprova3 + 2])
     #inscricao_aprova = re.findall(r'\d\d\d.\d\d\d.\d\d.\d\d\d\d', texto_aprova)
     #st.text(inscricao_aprova)
