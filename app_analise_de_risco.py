@@ -21,6 +21,8 @@ if texto_aprova != "":
     itens_analise=['Viabilidade','Estabelecimento','Bairro','Logradouro','Número','Social', 'Nome']
     index_aprova1=texto_aprova_split.index('Viabilidade')
     index_aprova2=texto_aprova_split.index('Estabelecimento')
+    index_aprova3=texto_aprova_split.index('PARTE')
+    st.text(index_aprova3)
 
     trecho_aprova = " ".join(texto_aprova_split[index_aprova1:index_aprova2])
 
