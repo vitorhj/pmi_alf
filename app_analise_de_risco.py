@@ -129,20 +129,19 @@ if texto_cnpj != "":
 
 else:
     razao_social_cnpj = ""
-
 #_____________________________________________________________________________________________________________________
 
 ##ESTRUTURA PAGINA
 
 st.title('PMI - ANÁLISE DE RISCO')
+        st.subheader('Links úteis')
+        st.markdown(str('https://servicos.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp'))
+        st.markdown(str('hhttp://regin.jucesc.sc.gov.br/regin.externo/CON_ViabilidadeSelecaoExternoV4.aspx?'))
 
 try:
     if texto_aprova != "":
         #if texto_aprova != "" and texto regin != "" and texto_cnpj != "":
         #Printa o resumo do processo
-        st.subheader('Links úteis')
-        st.markdown(str('https://servicos.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp'))
-        st.markdown(str('hhttp://regin.jucesc.sc.gov.br/regin.externo/CON_ViabilidadeSelecaoExternoV4.aspx?'))
         st.subheader('Resumo do processo')
         st.text('RAZÃO SOCIAL: '+razao_social_cnpj+', CNPJ: '+str(cnpj_aprova))
         st.text(logradouro_cnpj+', '+bairro_aprova+', '+numero_aprova)
