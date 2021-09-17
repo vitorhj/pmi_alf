@@ -142,6 +142,7 @@ try:
         #Printa o resumo do processo
         st.subheader('Links úteis')
         st.markdown(str('https://servicos.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp'))
+        st.markdown(str('hhttp://regin.jucesc.sc.gov.br/regin.externo/CON_ViabilidadeSelecaoExternoV4.aspx?'))
         st.subheader('Resumo do processo')
         st.text('RAZÃO SOCIAL: '+razao_social_cnpj+', CNPJ: '+str(cnpj_aprova))
         st.text(logradouro_cnpj+', '+bairro_aprova+', '+numero_aprova)
