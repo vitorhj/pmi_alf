@@ -151,6 +151,7 @@ st.title('PMI - ANÁLISE DE RISCO')
 st.subheader(str('Links úteis'))
 st.markdown(str('https://servicos.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp'))
 st.markdown(str('http://regin.jucesc.sc.gov.br/regin.externo/CON_ViabilidadeSelecaoExternoV4.aspx?'))
+st.markdown(str('https://geoitajai.github.io/geo/plantacadastral.html'))
 
 try:
     if texto_aprova != "":
