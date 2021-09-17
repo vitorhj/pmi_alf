@@ -25,7 +25,7 @@ if texto_aprova != "":
     ##Inscrição imobiliária no Aprova Digital
     
     inscricao_aprova = re.findall(r'\d\d\d.\d\d\d.\d\d.\d\d\d\d.\d\d\d\d.\d\d\d', texto_aprova)
-    st.text(inscricao_aprova[0])
+    inscricao_aprova = inscricao_aprova[0]
 
     trecho_aprova = " ".join(texto_aprova_split[index_aprova1:index_aprova2])
 
@@ -164,7 +164,7 @@ try:
         st.subheader('Resumo do processo')
         st.text('RAZÃO SOCIAL: '+razao_social_cnpj+', CNPJ: '+cnpj_aprova[0])
         st.text(logradouro_cnpj+', '+bairro_cnpj+', '+numeropredial_cnpj+', '+complemento_cnpj)
-        st.text('INSCRIÇÃO IMOBILIÁRIA: '+inscricao_aprova+' , copie cole na Geo para a consulta do grau de risco')
+        st.text('INSCRIÇÃO IMOBILIÁRIA: '+str(inscricao_aprova)+' , copie cole na Geo para a consulta do grau de risco')
         endereço_split = re.sub(' +', ' ',logradouro_aprova).split(' ')
         logradouro_google = "+".join(endereço_split)
         st.markdown(str('https://www.google.com/maps/place/')+logradouro_google+str(',+')+str(numero_aprova)+str('+,+Itaja%C3%AD+-+SC'))
