@@ -136,7 +136,7 @@ else:
 st.title('PMI - ANÁLISE DE RISCO')
 st.subheader(str('Links úteis'))
 st.markdown(str('https://servicos.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp'))
-st.markdown(str('hhttp://regin.jucesc.sc.gov.br/regin.externo/CON_ViabilidadeSelecaoExternoV4.aspx?'))
+st.markdown(str('http://regin.jucesc.sc.gov.br/regin.externo/CON_ViabilidadeSelecaoExternoV4.aspx?'))
 
 try:
     if texto_aprova != "":
@@ -195,7 +195,7 @@ try:
         st.dataframe(cnaes_formatados_regin)
 
     else:
-       st.text('Copie e cole as informações na barra lateral esquerda.')
+       st.markdown('Copie e cole as informações na barra lateral esquerda.')
 except:
   # Prevent the error from propagating into your Streamlit app.
   pass
