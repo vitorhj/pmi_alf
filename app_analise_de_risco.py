@@ -137,6 +137,8 @@ try:
     if texto_aprova != "":
         #if texto_aprova != "" and texto regin != "" and texto_cnpj != "":
         #Printa o resumo do processo
+        st.subheader('Links úteis')
+        st.markdown(str(https://servicos.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp))
         st.subheader('Resumo do processo')
         st.text('RAZÃO SOCIAL: '+razao_social_cnpj+', CNPJ: '+str(cnpj_aprova))
         st.text(logradouro_cnpj+', '+bairro_aprova+', '+numero_aprova)
