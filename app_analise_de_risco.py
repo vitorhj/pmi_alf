@@ -22,11 +22,11 @@ if texto_aprova != "":
     index_aprova1=texto_aprova_split.index('Viabilidade')
     index_aprova2=texto_aprova_split.index('Estabelecimento')
     
-    index_aprova3=texto_aprova_split.index('PRINT')
+    #index_aprova3=texto_aprova_split.index('PRINT')
     #index_aprova4=texto_aprova_split.index('DEFERIDO')
-    incricao_aprova = " ".join(texto_aprova_split[index_aprova3 :index_aprova4])
+    #incricao_aprova = " ".join(texto_aprova_split[index_aprova3 :index_aprova4])
     
-    st.text(index_aprova3)
+    #st.text(index_aprova3)
     #st.text(index_aprova4)
     #st.text(incricao_aprova)
     
