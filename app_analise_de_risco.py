@@ -7,7 +7,6 @@ import pandas as pd
 import re
 import streamlit as st
 import difflib
-import unidecode
 import os
 import shapely.wkt
 import webbrowser
