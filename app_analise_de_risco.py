@@ -31,8 +31,8 @@ if texto_aprova != "":
     #st.text(incricao_aprova)
     
     #incricao_aprova = " ".join(texto_aprova_split[index_aprova3 + 1:index_aprova3 + 2])
-    #inscricao_aprova = re.findall(r'\d\d\d.\d\d\d.\d\d.\d\d\d\d', texto_aprova)
-    #st.text(inscricao_aprova)
+    inscricao_aprova = re.findall(r'\d\d\d.\d\d\d.\d\d.\d\d\d\d.\d\d\d\d.\d\d\d', texto_aprova)
+    st.text(inscricao_aprova)
 
     trecho_aprova = " ".join(texto_aprova_split[index_aprova1:index_aprova2])
 
