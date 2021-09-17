@@ -4,12 +4,7 @@
 ## IMPORTA BIBLIOTECAS PARA O PYTHON
 
 import pandas as pd
-import re
 import streamlit as st
-import difflib
-import os
-import shapely.wkt
-import webbrowser
 
 #______________________________________________________________________________________________________________________
 
