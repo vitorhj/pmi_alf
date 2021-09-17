@@ -1,13 +1,11 @@
-
 #______________________________________________________________________________________________________________________
 
 ## IMPORTA BIBLIOTECAS PARA O PYTHON
 
 import pandas as pd
-import streamlit as st
 import re
+import streamlit as st
 import os
-
 
 #______________________________________________________________________________________________________________________
 
@@ -52,10 +50,25 @@ if texto_aprova != "":
     logradouro_aprova = " ".join(trecho_aprova_split3[index_aprova11:index_aprova12])
     numero_aprova = " ".join(trecho_aprova_split3[index_aprova13:index_aprova14])
 
+    index_aprova17=trecho_aprova_split3.index('Sala)')
+    index_aprova18=trecho_aprova_split3.index('(Sala)')
+    index_aprova19=trecho_aprova_split3.index('(Box)')
+    index_aprova20=trecho_aprova_split3.index('Telefone')
+    complemento1_aprova = " ".join(trecho_aprova_split3[index_aprova17+1:index_aprova18-2])
+    complemento2_aprova = " ".join(trecho_aprova_split3[index_aprova18+1:index_aprova19-2])
+    complemento3_aprova = " ".join(trecho_aprova_split3[index_aprova19+1:index_aprova20])
+
     #Extrai as informações do trecho
     cnaes_aprova = re.findall(r'\d\d.\d\d-\d-\d\d', texto_aprova)
     cnaes_aprova=list(set(cnaes_aprova))
-    cnpj_aprova = re.findall(r'\d\d.\d\d\d.\d\d\d/\d\d\d\d-\d\d', texto_aprova)
+
+    itens_analise=['Identificação','edificação']
+    index_aprova15=texto_aprova_split.index('Identificação')
+    index_aprova16=texto_aprova_split.index('edificação')
+    trecho_aprova_split4 = texto_aprova_split[index_aprova15:index_aprova16]
+    trecho_aprova_cnpj = " ".join(trecho_aprova_split4)
+    cnpj_aprova = re.findall(r'\d\d.\d\d\d.\d\d\d/\d\d\d\d-\d\d', trecho_aprova_cnpj)
+
 
 else:
     cnpj_aprova =""
@@ -129,6 +142,7 @@ if texto_cnpj != "":
 
 else:
     razao_social_cnpj = ""
+
 #_____________________________________________________________________________________________________________________
 
 ##ESTRUTURA PAGINA
@@ -140,24 +154,25 @@ st.markdown(str('http://regin.jucesc.sc.gov.br/regin.externo/CON_ViabilidadeSele
 
 try:
     if texto_aprova != "":
-        #if texto_aprova != "" and texto regin != "" and texto_cnpj != "":
         #Printa o resumo do processo
         st.subheader('Resumo do processo')
-        st.text('RAZÃO SOCIAL: '+razao_social_cnpj+', CNPJ: '+str(cnpj_aprova))
-        st.text(logradouro_cnpj+', '+bairro_aprova+', '+numero_aprova)
-        st.markdown(str('https://www.google.com/maps/place/')+logradouro_aprova+str(',+')+str(numero_aprova)+str('+,+Itaja%C3%AD+-+SC'))
-
+        st.text('RAZÃO SOCIAL: '+razao_social_cnpj+', CNPJ: '+cnpj_aprova[0])
+        st.text(logradouro_cnpj+', '+bairro_cnpj+', '+numeropredial_cnpj+', '+complemento_cnpj)
+        endereço_split = re.sub(' +', ' ',logradouro_aprova).split(' ')
+        logradouro_google = "+".join(endereço_split)
+        st.markdown(str('https://www.google.com/maps/place/')+logradouro_google+str(',+')+str(numero_aprova)+str('+,+Itaja%C3%AD+-+SC'))
+        
         #Printa a verificação do cnpj
         st.subheader('Verificação do CNPJ')
 
-        if (numero_cnpj == cnpj_aprova):
+        if (numero_cnpj[0] == cnpj_aprova[0]):
             st.text('Ok! Número CNPJ inserido corretamente no Aprova.')
         else:
             st.text('VERIFICAR! Número CNPJ NÃO coincide')
 
         #Printa a verificação da razão social
         st.subheader('Verificação da RAZÃO SOCIAL')
-        if (razao_social_cnpj == razao_social_aprova):
+        if (razao_social_cnpj == razao_social_aprova.upper()):
             st.text('Ok! A razão social inserida corretamento no Aprova.')
         else:
             st.text('VERIFICAR! A razão social NÃO coincide com o Aprova.')
@@ -165,13 +180,13 @@ try:
         #Printa a verificação do endereço
         st.subheader('Verificação do ENDEREÇO')
         st.text('** Verifique manualmente os endereços abaixo:')
-        st.text('Endereço no APROVA: '+logradouro_aprova+', '+bairro_aprova+', '+numero_aprova)
+        st.text('Endereço no APROVA: '+logradouro_aprova+', '+bairro_aprova+', '+numero_aprova+', '+complemento1_aprova+', '+complemento2_aprova+', '+complemento3_aprova)
         st.text('Endereço no CNPJ: '+logradouro_aprova+', '+bairro_cnpj+', '+numeropredial_cnpj+', '+complemento_cnpj)
         st.text('Endereço no REGIN: '+endereco_regin)
 
         #Printa a verificação dos cnaes
         st.subheader('Verificação dos CNAES')
-        #st.text('cnae principal '+cnae_principal_cnpj)
+
         if (set(cnaes_cnpj) == set(cnaes_formatados_regin)):
              st.text('Conferência dos CNAEs do CNPJ com o REGIN: Ok! CNAES coincidem.')
         else:
@@ -181,21 +196,39 @@ try:
              st.text('Conferência dos CNAEs do CNPJ com o APROVA: Ok! CNAES coincidem.')
         else:
             st.text('Conferência dos CNAEs do CNPJ com o APROVA: VERIFICAR! CNAES não coincidem.')
-
+                
         if (set(cnaes_formatados_regin) == set(cnaes_aprova)):
             st.text('Conferência dos CNAEs do APROVA com o REGIN: Ok! CNAES coincidem.')
         else:
             st.text('Conferência dos CNAEs do APROVA com o REGIN: VERIFICAR! CNAES não coincidem.')
 
-        st.text('CNAES no APROVA')
-        st.dataframe(cnaes_aprova)
-        st.text('CNAES no CNPJ')
-        st.dataframe(cnaes_cnpj)
-        st.text('CNAES no REGIN')
-        st.dataframe(cnaes_formatados_regin)
+        st.text('VERIFIQUE SE NÃO HOUVE A INSERÇÃO REPETIDA DE CNAES:')
+        nome_contagem = pd.Series(['Aprova Digital', 'Cartão CNPJ', 'REGIN'])      
+        n_cnaes=([len(cnaes_aprova),len(cnaes_cnpj),len(cnaes_formatados_regin)])
+        st.dataframe({'LOCAL':nome_contagem,'Nº DE CNAES':n_cnaes})
+
+            
+        if (set(cnaes_formatados_regin) == set(cnaes_aprova)):
+            st.text('TABELA DE CNAES')
+            tabela_cnaes = pd.DataFrame({ 'CNAES APROVA': cnaes_aprova, 'CNAES CNPJ': cnaes_cnpj, 'CNAES REGIN': cnaes_formatados_regin })
+            st.dataframe(tabela_cnaes)
+        else:
+            st.text('   ** CNAE principal: '+cnaes_cnpj[0])
+            st.text('   ** CNAES não inseridos no APROVA: '+str(set(cnaes_cnpj)-set(cnaes_aprova)))
+            verif_cnaes = set(cnaes_aprova)-set(cnaes_cnpj)
+            if verif_cnaes == set():
+                verif_cnaes = ""
+            st.text('   ** CNAES inseridos no APROVA que não estão no CNPJ: '+str(verif_cnaes))
+            st.text('CNAES do APROVA')
+            st.dataframe(cnaes_aprova)
+            st.text('CNAES do CNPJ')
+            st.dataframe(cnaes_cnpj)
+            st.text('CNAES do REGIN')
+            st.dataframe(cnaes_formatados_regin)
 
     else:
-       st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
+       st.text('Copie e cole as informações na barra lateral esquerda.')
 except:
   # Prevent the error from propagating into your Streamlit app.
   pass
+
