@@ -23,7 +23,7 @@ if texto_aprova != "":
     index_aprova2=texto_aprova_split.index('Estabelecimento')
     index_aprova3=texto_aprova_split.index('PARTE')
     st.text(index_aprova3)
-    incricao_aprova = texto_aprova_split[index_aprova3 + 2
+    incricao_aprova = texto_aprova_split[index_aprova3 + 2]
     #inscricao_aprova = re.findall(r'\d\d\d.\d\d\d.\d\d.\d\d\d\d', texto_aprova)
     st.text(inscricao_aprova)
 
