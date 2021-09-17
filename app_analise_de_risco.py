@@ -167,7 +167,7 @@ try:
         st.text('INSCRIÇÃO IMOBILIÁRIA: '+str(inscricao_aprova[0:15])+' , copie cole na Geo para a consulta do grau de risco')
         endereço_split = re.sub(' +', ' ',logradouro_aprova).split(' ')
         logradouro_google = "+".join(endereço_split)
-        st.markdown(str('https://www.google.com/maps/place/')+logradouro_google+str(',+')+str(numero_aprova)+str('+,+Itaja%C3%AD+-+SC'))
+        st.markdown('MAPS: '+str('https://www.google.com/maps/place/')+logradouro_google+str(',+')+str(numero_aprova)+str('+,+Itaja%C3%AD+-+SC'))
         
         #Printa a verificação do cnpj
         st.subheader('Verificação do CNPJ')
