@@ -134,9 +134,9 @@ else:
 ##ESTRUTURA PAGINA
 
 st.title('PMI - ANÁLISE DE RISCO')
-        st.subheader('Links úteis')
-        st.markdown(str('https://servicos.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp'))
-        st.markdown(str('hhttp://regin.jucesc.sc.gov.br/regin.externo/CON_ViabilidadeSelecaoExternoV4.aspx?'))
+st.subheader(str('Links úteis'))
+st.markdown(str('https://servicos.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp'))
+st.markdown(str('hhttp://regin.jucesc.sc.gov.br/regin.externo/CON_ViabilidadeSelecaoExternoV4.aspx?'))
 
 try:
     if texto_aprova != "":
