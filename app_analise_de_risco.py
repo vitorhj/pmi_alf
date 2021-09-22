@@ -15,7 +15,7 @@ from PIL import Image
 # Input box do aprova
 logo_image = ('./dados/logo.png')
 st.sidebar.image(logo_image, width=200)
-st.sidebar.subheader('Filtros:')
+st.sidebar.subheader('Insira os dados aqui:')
 texto_aprova = st.sidebar.text_input('CTRL+  V da página do APROVA:','')
 
 if texto_aprova != "":
