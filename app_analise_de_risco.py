@@ -13,9 +13,9 @@ from PIL import Image
 ## EXTRAI INFORMAÇÕES DO APROVA ##
 
 # Input box do aprova
-st.sidebar.subheader('Filtros:')
 logo_image = ('./dados/logo.png')
 st.sidebar.image(logo_image, width=200)
+st.sidebar.subheader('Filtros:')
 texto_aprova = st.sidebar.text_input('CTRL+  V da página do APROVA:','')
 
 if texto_aprova != "":
