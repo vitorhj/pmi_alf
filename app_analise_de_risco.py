@@ -6,12 +6,16 @@ import pandas as pd
 import re
 import streamlit as st
 import os
+from PIL import Image
 
 #______________________________________________________________________________________________________________________
 
 ## EXTRAI INFORMAÇÕES DO APROVA ##
 
 # Input box do aprova
+st.sidebar.subheader('Filtros:')
+logo_image = ('./dados/logo.png')
+st.sidebar.image(logo_image, width=200)
 texto_aprova = st.sidebar.text_input('CTRL+  V da página do APROVA:','')
 
 if texto_aprova != "":
