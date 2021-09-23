@@ -246,8 +246,8 @@ try:
             st.dataframe(cnaes_formatados_regin)
 
     else:
-    st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
+        st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
+
 except:
-  # Prevent the error from propagating into your Streamlit app.
   pass
 
