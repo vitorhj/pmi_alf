@@ -9,6 +9,9 @@ import os
 from PIL import Image
 
 #______________________________________________________________________________________________________________________
+##INPUTS DA PÁGINA DO STREAMLIT
+
+st.set_page_config(layout="wide")
 
 ## EXTRAI INFORMAÇÕES DO APROVA ##
 
