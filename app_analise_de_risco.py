@@ -160,14 +160,11 @@ else:
 ##ESTRUTURA PAGINA
 
 st.title('PMI - ANÁLISE DE RISCO')
-st.subheader(str('Links úteis'))
-st.markdown('CNPJ: '+str('https://servicos.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp'))
-st.markdown('REGIN: '+str('http://regin.jucesc.sc.gov.br/regin.externo/CON_ViabilidadeSelecaoExternoV4.aspx?'))
-st.markdown('GEO: '+str('https://geoitajai.github.io/geo/plantacadastral.html'))
 
 try:
     if texto_aprova != "":
         #Printa o resumo do processo
+        st.text('_____________________________________________________________________________)
         st.subheader('Resumo do processo')
         st.text('RAZÃO SOCIAL: '+razao_social_cnpj+', CNPJ: '+cnpj_aprova[0])
         st.text(logradouro_cnpj+', '+bairro_cnpj+', '+numeropredial_cnpj+', '+complemento_cnpj)
@@ -177,6 +174,7 @@ try:
         st.markdown('MAPS: '+str('https://www.google.com/maps/place/')+logradouro_google+str(',+')+str(numero_aprova)+str('+,+Itaja%C3%AD+-+SC'))
         
         #Printa a verificação do cnpj
+        st.text('_____________________________________________________________________________)
         st.subheader('Verificação do CNPJ')
 
         if (numero_cnpj[0] == cnpj_aprova[0]):
@@ -185,6 +183,7 @@ try:
             st.text('VERIFICAR! Número CNPJ NÃO coincide')
 
         #Printa a verificação da razão social
+        st.text('_____________________________________________________________________________)
         st.subheader('Verificação da RAZÃO SOCIAL')
         if (razao_social_cnpj == razao_social_aprova.upper()):
             st.text('Ok! A razão social inserida corretamento no Aprova.')
@@ -192,6 +191,7 @@ try:
             st.text('VERIFICAR! A razão social NÃO coincide com o Aprova.')
                 
         #Printa a verificação do endereço
+        st.text('_____________________________________________________________________________)
         st.subheader('Verificação do ENDEREÇO')
         st.text('** Verifique manualmente os endereços abaixo:')
         st.text('Endereço no APROVA: '+logradouro_aprova+', '+bairro_aprova+', '+numero_aprova+', '+complemento1_aprova+', '+complemento2_aprova+', '+complemento3_aprova)
@@ -199,6 +199,7 @@ try:
         st.text('Endereço no REGIN: '+endereco_regin)
 
         #Printa a verificação dos cnaes
+        st.text('_____________________________________________________________________________)
         st.subheader('Verificação dos CNAES')
 
         if (set(cnaes_cnpj) == set(cnaes_formatados_regin)):
@@ -241,7 +242,11 @@ try:
             st.dataframe(cnaes_formatados_regin)
 
     else:
-       st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
+    st.subheader(str('Links úteis'))
+    st.markdown('CNPJ: '+str('https://servicos.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp'))
+    st.markdown('REGIN: '+str('http://regin.jucesc.sc.gov.br/regin.externo/CON_ViabilidadeSelecaoExternoV4.aspx?'))
+    st.markdown('GEO: '+str('https://geoitajai.github.io/geo/plantacadastral.html'))   
+    st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
 except:
   # Prevent the error from propagating into your Streamlit app.
   pass
