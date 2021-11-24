@@ -173,10 +173,10 @@ try:
         st.text('RAZÃO SOCIAL: '+razao_social_cnpj+', CNPJ: '+cnpj_aprova[0])
         st.text(logradouro_cnpj+', '+bairro_cnpj+', '+numeropredial_cnpj+', '+complemento_cnpj)
         st.text('INSCRIÇÃO IMOBILIÁRIA: '+str(inscricao_aprova[0:15])+' , copie cole no Geo para a consulta do grau de risco')
-        st.markdown(str('https://geoitajai.github.io/geo/consultaalvara.html#'+inscricao_aprova[0:3])
         endereço_split = re.sub(' +', ' ',logradouro_aprova).split(' ')
         logradouro_google = "+".join(endereço_split)
         st.markdown('MAPS: '+str('https://www.google.com/maps/place/')+logradouro_google+str(',+')+str(numero_aprova)+str('+,+Itaja%C3%AD+-+SC'))
+        st.markdown(str('https://geoitajai.github.io/geo/consultaalvara.html#'+inscricao_aprova[0:3])
         
         #Printa a verificação do cnpj
         st.text('____________________________________________________________________________________________________________')
