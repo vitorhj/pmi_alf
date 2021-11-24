@@ -176,7 +176,7 @@ try:
         endereço_split = re.sub(' +', ' ',logradouro_aprova).split(' ')
         logradouro_google = "+".join(endereço_split)
         st.markdown('MAPS: '+str('https://www.google.com/maps/place/')+logradouro_google+str(',+')+str(numero_aprova)+str('+,+Itaja%C3%AD+-+SC'))
-        #st.markdown(str('https://geoitajai.github.io/geo/consultaalvara.html#'+inscricao_aprova[0:3])
+        st.markdown(str('https://geoitajai.github.io/geo/consultaalvara.html#')+inscricao_aprova[0:3])
         
         #Printa a verificação do cnpj
         st.text('____________________________________________________________________________________________________________')
