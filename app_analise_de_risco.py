@@ -245,6 +245,10 @@ try:
             st.dataframe(cnaes_cnpj)
             st.text('CNAES do REGIN')
             st.dataframe(cnaes_formatados_regin)
+            
+        #Printa outras verificações
+        st.text('____________________________________________________________________________________________________________')
+        st.subheader('Outras verificações')
 
     else:
         st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
