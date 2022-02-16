@@ -249,12 +249,34 @@ try:
         #Printa outras verificações
         st.text('____________________________________________________________________________________________________________')
         st.subheader('Verificação de documentos complementares')
+        
+        #Verificação armas de fogo
+        
         if str('47.89-0-09') in cnaes_cnpj:
-            st.text('Verificação armas de fogo: APRESENTA CNAE para comércio de armas de fogo.')
+            st.text('Verificação armas de fogo: APRESENTA CNAE para comércio de armas de fogo, solicitar documentação extra.')
         else:
             st.text('Verificação armas de fogo: NÃO apresenta CNAE para comércio de armas de fogo.')
             
-
+        #Verificação SPE
+        
+        if str('41.10-7-00') in cnaes_cnpj:
+            st.text('Verificação SPE: APRESENTA CNAE para construção e incorporação, verificar se não é uma SPE.')
+        else:
+            st.text('Verificação SPE: NÃO apresenta CNAE para construção e incorporação.')
+        
+        if str('41.20-4-00') in cnaes_cnpj:
+            st.text('Verificação SPE: APRESENTA CNAE para construção e incorporação, verificar se não é uma SPE.')
+        else:
+            st.text('Verificação SPE: NÃO apresenta CNAE para construção e incorporação.')
+        
+        #Verificação transporte escolar
+        
+         if str('49.24-8-00') in cnaes_cnpj:
+            st.text('Verificação armas de fogo: APRESENTA CNAE para transporte escolar, solicitar documentação extra.')
+        else:
+            st.text('Verificação armas de fogo: NÃO apresenta CNAE para transporte escolar.')
+        
+           
     else:
         st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
 
