@@ -276,9 +276,9 @@ try:
         
         cnae4 = '49.24-8-00'
         if cnae4 in cnaes_cnpj:
-            st.text('Verificação armas de fogo: APRESENTA CNAE para transporte escolar, solicitar documentação extra.')
+            st.text('Verificação transporte escolar: APRESENTA CNAE para transporte escolar, solicitar documentação extra.')
         if cnae4 not in cnaes_cnpj:
-            st.text('Verificação armas de fogo: NÃO apresenta CNAE para transporte escolar.')
+            st.text('Verificação transporte escolar: NÃO apresenta CNAE para transporte escolar.')
 
     else:
         st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
