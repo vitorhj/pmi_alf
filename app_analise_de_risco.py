@@ -271,6 +271,12 @@ try:
            st.text('Verificação SPE 2: APRESENTA CNAE para incorporação imobiliária, verificar se não é uma SPE.')
         if cnae3 not in cnaes_aprova:
            st.text('Verificação SPE 2: NÃO apresenta CNAE para incorporação imobiliária.')
+        
+        cnae6 = ['41.10-7-00','41.20-4-00']
+        if cnae6 in cnaes_aprova:
+           st.text('Verificação SPE 3: APRESENTA CNAE para incorporação imobiliária, verificar se não é uma SPE.')
+        if cnae6 not in cnaes_aprova:
+           st.text('Verificação SPE 3: NÃO apresenta CNAE para incorporação imobiliária.')
 
         #Verificação transporte escolar
         
@@ -279,6 +285,13 @@ try:
             st.text('Verificação transporte escolar: APRESENTA CNAE para transporte escolar, solicitar documentação extra.')
         if cnae4 not in cnaes_cnpj:
             st.text('Verificação transporte escolar: NÃO apresenta CNAE para transporte escolar.')
+            
+        #Verificação transporte por cabotagem
+        cnae5 = '50.11-4-02'
+        if cnae5 in cnaes_cnpj:
+            st.text('Verificação transporte cabotagem: APRESENTA CNAE para transporte por cabotagem, solicitar autorização da ANTAC.')
+        if cnae5 not in cnaes_cnpj:
+            st.text('Verificação transporte cabotagem: NÃO apresenta CNAE para transporte de cabotagem.')
 
     else:
         st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
