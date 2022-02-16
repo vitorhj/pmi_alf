@@ -260,23 +260,13 @@ try:
             
         #Verificação SPE
         
-        cnae2 = '41.10-7-00'
-        if cnae2 in cnaes_aprova:
-            st.text('Verificação SPE 1: APRESENTA CNAE para construção, verificar se não é uma SPE.')
-        if cnae2 not in cnaes_aprova:
-            st.text('Verificação SPE 1: NÃO apresenta CNAE para construção.')
-      
+        cnae2 = '41.10-7-00'      
         cnae3 = '41.20-4-00'
-        if cnae3 in cnaes_aprova:
-           st.text('Verificação SPE 2: APRESENTA CNAE para incorporação imobiliária, verificar se não é uma SPE.')
-        if cnae3 not in cnaes_aprova:
-           st.text('Verificação SPE 2: NÃO apresenta CNAE para incorporação imobiliária.')
         
-        cnae6 = ['41.10-7-00','41.20-4-00']
         if (cnae2 or cnae3) in cnaes_aprova:
-           st.text('Verificação SPE 3: APRESENTA CNAE para incorporação imobiliária, verificar se não é uma SPE.')
+           st.text('Verificação SPE: APRESENTA CNAE para construção o incorporação, verificar se não é uma SPE.')
         if (cnae2 or cnae3) not in cnaes_aprova:
-           st.text('Verificação SPE 3: NÃO apresenta CNAE para incorporação imobiliária.')
+           st.text('Verificação SPE: NÃO apresenta CNAE para incorporação imobiliária ou construção.')
 
         #Verificação transporte escolar
         
