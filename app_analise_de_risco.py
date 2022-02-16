@@ -249,7 +249,7 @@ try:
         #Printa outras verificações
         st.text('____________________________________________________________________________________________________________')
         st.subheader('Outras verificações')
-        if str(47.89-0-09) in cnaes_cnpj:
+        if str('47.89-0-09') in cnaes_cnpj:
             st.text('Verificação armas de fogo: APRESENTA CNAE para comércio de armas de fogo.')
         else:
             st.text('Verificação armas de fogo: NÃO apresenta CNAE para comércio de armas de fogo.')
