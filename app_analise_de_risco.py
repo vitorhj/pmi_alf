@@ -253,9 +253,9 @@ try:
         #Verificação armas de fogo
         
         cnae1 = ['47.89-0-09']
-        if cnae1 in cnaes_cnpj:
+        if cnae1 in cnaes_aprova:
             st.text('Verificação armas de fogo: APRESENTA CNAE para comércio de armas de fogo, solicitar documentação extra.')
-        elif cnae1 in cnaes_cnpj:
+        elif cnae1 in cnaes_aprova:
             st.text('Verificação armas de fogo: NÃO apresenta CNAE para comércio de armas de fogo.')
             
         st.text(cnaes_cnpj)
