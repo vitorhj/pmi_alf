@@ -259,6 +259,7 @@ try:
             st.text('Verificação armas de fogo: NÃO apresenta CNAE para comércio de armas de fogo.')
             
         st.text(cnaes_cnpj)
+        st.text(cnae1)
             
         #Verificação SPE
         
