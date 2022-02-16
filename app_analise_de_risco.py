@@ -273,9 +273,9 @@ try:
            st.text('Verificação SPE 2: NÃO apresenta CNAE para incorporação imobiliária.')
         
         cnae6 = ['41.10-7-00','41.20-4-00']
-        if cnae6 in cnaes_aprova:
+        if (cnae2 or cnae3) in cnaes_aprova:
            st.text('Verificação SPE 3: APRESENTA CNAE para incorporação imobiliária, verificar se não é uma SPE.')
-        if cnae6 not in cnaes_aprova:
+        if (cnae2 or cnae3) not in cnaes_aprova:
            st.text('Verificação SPE 3: NÃO apresenta CNAE para incorporação imobiliária.')
 
         #Verificação transporte escolar
