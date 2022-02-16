@@ -256,16 +256,14 @@ try:
         if cnae1 in cnaes_aprova:
             st.text('Verificação armas de fogo: APRESENTA CNAE para comércio de armas de fogo, solicitar documentação extra.')
         elif cnae1 in cnaes_aprova:
-            st.text('Verificação armas de fogo: NÃO apresenta CNAE para comércio de armas de fogo.')
-            
-        st.text(cnaes_cnpj)
-        st.text(cnae1)
+            st.text('Verificação armas de fogo: NÃO apresenta CNAE para comércio de armas de fogo.')     
             
         #Verificação SPE
         
-        if set('41.10-7-00') in cnaes_cnpj:
+        cnae2 = '41.10-7-00'
+        if cnae2 in cnaes_cnpj:
             st.text('Verificação SPE: APRESENTA CNAE para construção e incorporação, verificar se não é uma SPE.')
-        elif set('41.10-7-00') in cnaes_cnpj:
+        elif cnae2 in cnaes_cnpj:
             st.text('Verificação SPE: NÃO apresenta CNAE para construção e incorporação.')
         
         if set('41.20-4-00') in cnaes_cnpj:
