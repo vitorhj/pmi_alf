@@ -251,7 +251,7 @@ try:
         st.subheader('Verificação de documentos complementares')
         
         #Tabelas com CNAES
-        tabela_cnaes = pd.read_csv('./dados/grau_risco_maio_2021.xlsx - Página2.csv', sep=';')
+        tabela_cnaes = pd.read_csv('./dados/grau_risco_maio_2021.xlsx - Página2.csv', sep=',')
         tabela_cnaes
         
         #Verificação armas de fogo
