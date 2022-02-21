@@ -256,7 +256,6 @@ try:
         cnaes_cnpj = pd.DataFrame(cnaes_cnpj)
         
         nova_tabela=tabela_cnaes.merge(cnaes_cnpj,left_on='codigo', right_on=0)
-        nova_tabela
         nova_tabela.drop([0], axis=1, inplace=True)
         nova_tabela
         
