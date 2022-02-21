@@ -256,7 +256,7 @@ try:
         
         cnaes_cnpj = st.dataframe(cnaes_cnpj)
         cnaes_cnpj
-        cnaes_cnpj.rename(columns={'0': 'codigo'})
+        cnaes_cnpj.rename(columns={0: 'codigo'})
         cnaes_cnpj
         nova_tabela=tabela_cnaes.merge(cnaes_cnpj,how='outer',left_on='codigo', right_on='')
         nova_tabela
