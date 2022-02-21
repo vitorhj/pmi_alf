@@ -257,7 +257,6 @@ try:
         cnaes_cnpj = pd.DataFrame(cnaes_cnpj)
         cnaes_cnpj
         
-        cnaes_cnpj.index = pd.DataFrame(cnaes_cnpj)
         cnaes_cnpj.columns = [codigo]
         cnaes_cnpj
         
