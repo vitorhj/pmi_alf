@@ -254,9 +254,9 @@ try:
         tabela_cnaes = pd.read_csv('./dados/grau_risco_maio_2021.xlsx - Página2.csv', sep=',')
         tabela_cnaes
         
-        cnaes_cnpj = st.dataframe(cnaes_cnpj)
+        cnaes_cnpj = pd.DataFrame(cnaes_cnpj)
         cnaes_cnpj
-        cnaes_cnpj1 = cnaes_cnpj.columns[codigo]
+        cnaes_cnpj.columns[codigo]
         cnaes_cnpj1
         nova_tabela=tabela_cnaes.merge(cnaes_cnpj,how='outer',left_on='codigo', right_on='')
         nova_tabela
