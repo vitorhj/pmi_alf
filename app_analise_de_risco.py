@@ -242,7 +242,7 @@ try:
             st.text('CNAES do APROVA')
             st.dataframe(cnaes_aprova)
             st.text('CNAES do CNPJ')
-            cnaes_requerente = st.dataframe(cnaes_cnpj)
+            st.dataframe(cnaes_cnpj)=cnaes_requerente
             cnaes_requerente
             st.text('CNAES do REGIN')
             st.dataframe(cnaes_formatados_regin)
