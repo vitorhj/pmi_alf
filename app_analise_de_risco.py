@@ -255,9 +255,8 @@ try:
         tabela_cnaes
         
         cnaes_cnpj = pd.DataFrame(cnaes_cnpj)
+        cnaes_cnpj.columns= [codigo]
         cnaes_cnpj
-        cnaes_cnpj.columns[codigo]
-        cnaes_cnpj1
         nova_tabela=tabela_cnaes.merge(cnaes_cnpj,how='outer',left_on='codigo', right_on='')
         nova_tabela
         
