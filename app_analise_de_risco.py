@@ -263,9 +263,9 @@ try:
         
         cnae1 = '47.89-0-09'
         if cnae1 in cnaes_aprova:
-            st.text('Verificação armas de fogo: APRESENTA CNAE para comércio de armas de fogo, solicitar documentação extra.')
+            st.text('*** APRESENTA CNAE para comércio de armas de fogo, solicitar documentação extra.')
         if cnae1 not in cnaes_aprova:
-            st.text('Verificação armas de fogo: NÃO apresenta CNAE para comércio de armas de fogo.')     
+            st.text('*** NÃO apresenta CNAE para comércio de armas de fogo.')     
             
         #Verificação SPE
         
@@ -273,24 +273,24 @@ try:
         cnae3 = '41.20-4-00'
         
         if (cnae2 or cnae3) in cnaes_aprova:
-           st.text('Verificação SPE: APRESENTA CNAE para construção o incorporação, verificar se não é uma SPE.')
+           st.text('*** APRESENTA CNAE para construção ou incorporação, verificar se é uma SPE.')
         if (cnae2 or cnae3) not in cnaes_aprova:
-           st.text('Verificação SPE: NÃO apresenta CNAE para incorporação imobiliária ou construção.')
+           st.text('*** NÃO apresenta CNAE para incorporação imobiliária ou construção (SPE).')
 
         #Verificação transporte escolar
         
         cnae4 = '49.24-8-00'
         if cnae4 in cnaes_cnpj:
-            st.text('Verificação transporte escolar: APRESENTA CNAE para transporte escolar, solicitar documentação extra.')
+            st.text('*** APRESENTA CNAE para transporte escolar, solicitar documentação extra.')
         if cnae4 not in cnaes_cnpj:
-            st.text('Verificação transporte escolar: NÃO apresenta CNAE para transporte escolar.')
+            st.text('*** NÃO apresenta CNAE para transporte escolar.')
             
         #Verificação transporte por cabotagem
         cnae5 = '50.11-4-02'
         if cnae5 in cnaes_cnpj:
-            st.text('Verificação transporte cabotagem: APRESENTA CNAE para transporte por cabotagem, solicitar autorização da ANTAC.')
+            st.text('*** APRESENTA CNAE para transporte por cabotagem, solicitar autorização da ANTAC.')
         if cnae5 not in cnaes_cnpj:
-            st.text('Verificação transporte cabotagem: NÃO apresenta CNAE para transporte de cabotagem.')
+            st.text('*** NÃO apresenta CNAE para transporte de cabotagem.')
 
     else:
         st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
