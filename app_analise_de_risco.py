@@ -254,7 +254,7 @@ try:
         tabela_cnaes = pd.read_csv('./dados/grau_risco_maio_2021.xlsx - Página2.csv', sep=',')
         tabela_cnaes
         
-        nova_tabela=tabela_cnaes.merge(cnaes_cnpj,how='left',left_on='codigo', right_on='0')
+        #nova_tabela=tabela_cnaes.merge(cnaes_cnpj,how='left',left_on='codigo', right_on='0')
         
         #Verificação armas de fogo
         
