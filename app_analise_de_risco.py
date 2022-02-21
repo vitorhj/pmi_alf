@@ -256,8 +256,11 @@ try:
         
         cnaes_cnpj = pd.DataFrame(cnaes_cnpj)
         cnaes_cnpj
+        
+        cnaes_cnpj.index = pd.DataFrame(cnaes_cnpj)
         cnaes_cnpj.columns = [codigo]
         cnaes_cnpj
+        
         nova_tabela=tabela_cnaes.merge(cnaes_cnpj,how='outer',left_on='codigo', right_on='')
         nova_tabela
         
