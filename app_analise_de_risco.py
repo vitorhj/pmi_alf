@@ -242,7 +242,8 @@ try:
             st.text('CNAES do APROVA')
             st.dataframe(cnaes_aprova)
             st.text('CNAES do CNPJ')
-            st.dataframe(cnaes_cnpj)
+            cnaes_requerente = st.dataframe(cnaes_cnpj)
+            cnaes_requerente
             st.text('CNAES do REGIN')
             st.dataframe(cnaes_formatados_regin)
             
@@ -253,6 +254,8 @@ try:
         #Tabelas com CNAES
         tabela_cnaes = pd.read_csv('./dados/grau_risco_maio_2021.xlsx - Página2.csv', sep=',')
         tabela_cnaes
+        
+        nova_tabela=tabela_cnaes.merge(cnaes_requerente,how='left',left_on='codigo', right_on='inscricao')
         
         #Verificação armas de fogo
         
