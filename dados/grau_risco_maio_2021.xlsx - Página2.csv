@@ -1099,7 +1099,7 @@ codigo,denominacao,Licenciamento,Outros documentos
 71.19-7-03,Serviços de desenho técnico relacionados à arquitetura e engenharia,Não,-
 71.19-7-04,Serviços de perícia técnica relacionados à segurança do trabalho,Não,-
 71.19-7-99,Atividades técnicas relacionadas à engenharia e arquitetura não especificadas anteriormente,Não,-
-71.20-1-00,Testes e análises técnicas,Sim,-
+71.20-1-00,Testes e análises técnicas,Não,"Caso seja uma empresa de vistoria veicular: Precisa de autorização do DETRAN. Documento obtido de forma posterior, precisa de alvará provisório"
 72.10-0-00,Pesquisa e desenvolvimento experimental em ciências físicas e naturais,Não,-
 72.20-7-00,Pesquisa e desenvolvimento experimental em ciências sociais e humanas,Não,-
 73.11-4-00,Agências de publicidade,Não,-
@@ -1174,7 +1174,7 @@ codigo,denominacao,Licenciamento,Outros documentos
 82.99-7-03,"Serviços de gravação de carimbos, exceto confecção",Não,-
 82.99-7-04,Leiloeiros independentes,Não,-
 82.99-7-05,Serviços de levantamento de fundos sob contrato,Não,-
-82.99-7-99,Outras atividades de serviços prestados principalmente às empresas não especificadas anteriormente,Não,-
+82.99-7-99,Outras atividades de serviços prestados principalmente às empresas não especificadas anteriormente,Não,"Caso seja uma empresa de vistoria veicular: Precisa de autorização do DETRAN. Documento obtido de forma posterior, precisa de alvará provisório"
 82.30-0-02,Casas de festas e eventos,Não,Laudo acustico + ART. Bombeiros para reunião de público. CMGDT
 82.99-7-06,Casas lotéricas,Não,Autorização da CAIXA ECONÕMICA FEDERAL
 82.92-0-00,Envasamento e empacotamento sob contrato,Não,-
