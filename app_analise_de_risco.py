@@ -264,9 +264,9 @@ try:
         
         EV = 'COMPARTILHADO'
         if EV in despacho_regin_split:
-            st.text('*** ESCRITÓRIO VIRTUAL? SIM.')
+            st.text('*** ESCRITÓRIO VIRTUAL? SIM, consta no despacho.')
         if EV not in despacho_regin_split:
-            st.text('*** ESCRITÓRIO VIRTUAL? NÃO.')  
+            st.text('*** ESCRITÓRIO VIRTUAL? NÃO consta no despacho.')  
        
         REF = 'REFERÊNCIA'
         if REF in despacho_regin_split:
@@ -298,9 +298,9 @@ try:
         cdezdois = '10-'
         
         if (cnove or cnovedois or cdez or cdezdois) in despacho_regin_split:
-            st.text('*** DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES? (CAMPOS 9 E 10) SIM, consta no despacho.')
+            st.text('*** (CAMPOS 9 E 10) DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES? SIM, consta no despacho.')
         if (cnove or cnovedois or cdez or cdezdois) not in despacho_regin_split:
-            st.text('*** DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES? (CAMPOS 9 E 10) NÃO consta no despacho.')
+            st.text('*** (CAMPOS 9 E 10) DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES? NÃO consta no despacho.')
 
         #Printa outras verificações
         st.text('____________________________________________________________________________________________________________')
