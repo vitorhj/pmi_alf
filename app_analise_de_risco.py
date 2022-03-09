@@ -299,7 +299,6 @@ try:
     else:
         st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
         
-
-  except:
+except:
   pass
 
