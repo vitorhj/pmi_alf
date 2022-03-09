@@ -292,14 +292,14 @@ try:
         if COM not in despacho_regin_split:
             st.text('*** COMED? NÃO consta no despacho.')]
             
-        C9 = '9'
-        C10 = '10'
-        C92 = '9-'
-        C102 = '10-'
+        cnove = '9'
+        cdez = '10'
+        cnovedois = '9-'
+        cdezdois = '10-'
         
-        if  (C9 or C92) in despacho_regin_split:
+        if  (cnove or cnovedois) in despacho_regin_split:
             st.text('*** DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES? (CAMPOS 9 E 10) SIM, consta no despacho.')
-        if (C9 or C92) not in despacho_regin_split:
+        if (cnove or cnovedois) not in despacho_regin_split:
             st.text('*** DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES? (CAMPOS 9 E 10) NÃO consta no despacho.')
             
         trecho_regin_cnaes = " ".join(texto_regin_split[index1:index2])
