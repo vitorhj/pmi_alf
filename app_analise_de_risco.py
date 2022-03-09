@@ -115,6 +115,13 @@ if texto_regin != "":
     index3=texto_regin_split.index('LOCALIZAÇÃO')+1
     index4=texto_regin_split.index('ITAJAI')
     endereco_regin = " ".join(texto_regin_split[index3:index4])
+    
+    index5=texto_regin_split.index('SMU')+1
+    index6=texto_regin_split.index('DIGITAL')
+    despacho_regin = " ".join(texto_regin_split[index5:index6])
+    
+    
+    
 
 #______________________________________________________________________________________________________________________
 
@@ -250,9 +257,6 @@ try:
         st.text('____________________________________________________________________________________________________________')
         st.subheader('Verificação do REGIN')
         
-        index_regin=texto_regin_split.index('SMU')
-        index_reginfim=texto_regin_split.index('DIGITAL')
-        despacho_regin = " ".join(texto_regin_split[index_regin:index_reginfim])
         st.text(despacho_regin)
     
         #Printa outras verificações
