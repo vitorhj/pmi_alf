@@ -259,6 +259,14 @@ try:
         
         st.text('DESPACHO REGIN:')
         st.text(str(despacho_regin))
+        
+        EV = 'COMPARTILHADO'
+        if EV in despacho_regin:
+            st.text('*** ESCRITÓRIO VIRTUAL? SIM.')
+        if cnae1 not in cnaes_aprova:
+            st.text('*** ESCRITÓRIO VIRTUAL? NÃO.')  
+
+    trecho_regin_cnaes = " ".join(texto_regin_split[index1:index2])
     
         #Printa outras verificações
         st.text('____________________________________________________________________________________________________________')
