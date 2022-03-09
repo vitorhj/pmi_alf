@@ -117,7 +117,7 @@ if texto_regin != "":
     endereco_regin = " ".join(texto_regin_split[index3:index4])
     
     index5=texto_regin_split.index('SMU')+1
-    index6=texto_regin_split.index('SANITÁRIA'-11)
+    index6=texto_regin_split.index('SANITÁRIA')-11
     despacho_regin = " ".join(texto_regin_split[index5:index6])
     
     
