@@ -263,7 +263,7 @@ try:
         EV = 'COMPARTILHADO'
         if EV in despacho_regin:
             st.text('*** ESCRITÓRIO VIRTUAL? SIM.')
-        if cnae1 not in cnaes_aprova:
+        if EV not in despacho_regin:
             st.text('*** ESCRITÓRIO VIRTUAL? NÃO.')  
 
     trecho_regin_cnaes = " ".join(texto_regin_split[index1:index2])
