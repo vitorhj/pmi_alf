@@ -260,13 +260,14 @@ try:
         st.text('DESPACHO REGIN:')
         st.text(str(despacho_regin))
         
+        despacho_regin_split = re.sub(' +', ' ',despacho_regin).split(' ')
         EV = 'COMPARTILHADO'
-        if EV in despacho_regin:
+        if EV in despacho_regin_split:
             st.text('*** ESCRITÓRIO VIRTUAL? SIM.')
-        if EV not in despacho_regin:
+        if EV not in despacho_regin_split:
             st.text('*** ESCRITÓRIO VIRTUAL? NÃO.')  
 
-    trecho_regin_cnaes = " ".join(texto_regin_split[index1:index2])
+        trecho_regin_cnaes = " ".join(texto_regin_split[index1:index2])
     
         #Printa outras verificações
         st.text('____________________________________________________________________________________________________________')
