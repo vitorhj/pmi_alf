@@ -294,6 +294,11 @@ try:
 
     else:
         st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
+        
+        
+        #Printa REGIN
+        st.text('____________________________________________________________________________________________________________')
+        st.subheader('Verificação do REGIN')
 
 except:
   pass
