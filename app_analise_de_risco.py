@@ -301,9 +301,7 @@ try:
             st.text('*** DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES? (CAMPOS 9 E 10) SIM, consta no despacho.')
         if (cnove or cnovedois) not in despacho_regin_split:
             st.text('*** DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES? (CAMPOS 9 E 10) NÃO consta no despacho.')
-            
-        trecho_regin_cnaes = " ".join(texto_regin_split[index1:index2])
-    
+
         #Printa outras verificações
         st.text('____________________________________________________________________________________________________________')
         st.subheader('Verificação de documentos complementares')
