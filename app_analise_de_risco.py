@@ -257,6 +257,7 @@ try:
         st.text('____________________________________________________________________________________________________________')
         st.subheader('Verificação do REGIN')
         
+        st.text('DESPACHO REGIN')
         st.text(str(despacho_regin))
     
         #Printa outras verificações
