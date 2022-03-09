@@ -297,9 +297,9 @@ try:
         cnovedois = '9-'
         cdezdois = '10-'
         
-        if (cnove or cnovedois) in despacho_regin_split:
+        if (cnove or cnovedois or cdez or cdezdois) in despacho_regin_split:
             st.text('*** DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES? (CAMPOS 9 E 10) SIM, consta no despacho.')
-        if (cnove or cnovedois) not in despacho_regin_split:
+        if (cnove or cnovedois or cdez or cdezdois) not in despacho_regin_split:
             st.text('*** DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES? (CAMPOS 9 E 10) NÃO consta no despacho.')
 
         #Printa outras verificações
