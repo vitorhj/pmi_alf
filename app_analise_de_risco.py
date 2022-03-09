@@ -97,7 +97,7 @@ if texto_regin != "":
 
     texto_regin_split = re.sub(' +', ' ',texto_regin).split(' ')
 
-    itens_analise=['Código','NOMES']
+    itens_analise=['Código','NOMES', 'SMU', 'DIGITAL']
     index1=texto_regin_split.index('Código')
     index2=texto_regin_split.index('NOMES')
 
@@ -257,7 +257,7 @@ try:
         st.text('____________________________________________________________________________________________________________')
         st.subheader('Verificação do REGIN')
         
-        st.text(despacho_regin)
+        st.text(str(despacho_regin))
     
         #Printa outras verificações
         st.text('____________________________________________________________________________________________________________')
