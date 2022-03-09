@@ -290,7 +290,7 @@ try:
         if COM in despacho_regin_split:
             st.text('*** COMED? SIM, consta no despacho.')
         if COM not in despacho_regin_split:
-            st.text('*** COMED? NÃO consta no despacho.')]
+            st.text('*** COMED? NÃO consta no despacho.')
             
         cnove = '9'
         cdez = '10'
