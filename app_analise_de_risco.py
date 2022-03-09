@@ -253,11 +253,11 @@ try:
             st.text('CNAES do REGIN')
             st.dataframe(cnaes_formatados_regin)
             
-        #Printa verificação REGIn
+        #Printa verificação REGIN
         st.text('____________________________________________________________________________________________________________')
         st.subheader('Verificação do REGIN')
         
-        st.text('DESPACHO REGIN')
+        st.text('DESPACHO REGIN:')
         st.text(str(despacho_regin))
     
         #Printa outras verificações
