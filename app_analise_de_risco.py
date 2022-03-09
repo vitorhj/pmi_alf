@@ -246,6 +246,10 @@ try:
             st.text('CNAES do REGIN')
             st.dataframe(cnaes_formatados_regin)
             
+        #Printa verificação REGIn
+        st.text('____________________________________________________________________________________________________________')
+        st.subheader('Verificação do REGIN')
+            
         #Printa outras verificações
         st.text('____________________________________________________________________________________________________________')
         st.subheader('Verificação de documentos complementares')
@@ -295,11 +299,7 @@ try:
     else:
         st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
         
-        
-        #Printa REGIN
-        st.text('____________________________________________________________________________________________________________')
-        st.subheader('Verificação do REGIN')
 
-except:
+  except:
   pass
 
