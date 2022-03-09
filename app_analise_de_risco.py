@@ -97,7 +97,7 @@ if texto_regin != "":
 
     texto_regin_split = re.sub(' +', ' ',texto_regin).split(' ')
 
-    itens_analise=['Código','NOMES', 'SMU', 'DIGITAL']
+    itens_analise=['Código','NOMES', 'SMU', 'SANITÁRIA']
     index1=texto_regin_split.index('Código')
     index2=texto_regin_split.index('NOMES')
 
@@ -117,7 +117,7 @@ if texto_regin != "":
     endereco_regin = " ".join(texto_regin_split[index3:index4])
     
     index5=texto_regin_split.index('SMU')+1
-    index6=texto_regin_split.index('DIGITAL')
+    index6=texto_regin_split.index('SANITÁRIA')
     despacho_regin = " ".join(texto_regin_split[index5:index6])
     
     
