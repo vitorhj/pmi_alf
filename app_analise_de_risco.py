@@ -287,20 +287,20 @@ try:
             st.text('*** PARECER DA DEFESA CIVIL? NÃO consta no despacho.')
         
         COM = 'COMED'
-        if  COM in despacho_regin_split:
+        if COM in despacho_regin_split:
             st.text('*** COMED? SIM, consta no despacho.')
         if COM not in despacho_regin_split:
             st.text('*** COMED? NÃO consta no despacho.')]
             
-        #cnove = '9'
-        #cdez = '10'
-        #cnovedois = '9-'
-        #cdezdois = '10-'
+        cnove = '9'
+        cdez = '10'
+        cnovedois = '9-'
+        cdezdois = '10-'
         
-        #if (cnove or cnovedois) in despacho_regin_split:
-            #st.text('*** DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES? (CAMPOS 9 E 10) SIM, consta no despacho.')
-        #if (cnove or cnovedois) not in despacho_regin_split:
-            #st.text('*** DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES? (CAMPOS 9 E 10) NÃO consta no despacho.')
+        if (cnove or cnovedois) in despacho_regin_split:
+            st.text('*** DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES? (CAMPOS 9 E 10) SIM, consta no despacho.')
+        if (cnove or cnovedois) not in despacho_regin_split:
+            st.text('*** DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES? (CAMPOS 9 E 10) NÃO consta no despacho.')
 
         #Printa outras verificações
         st.text('____________________________________________________________________________________________________________')
