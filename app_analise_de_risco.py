@@ -249,7 +249,12 @@ try:
         #Printa verificação REGIn
         st.text('____________________________________________________________________________________________________________')
         st.subheader('Verificação do REGIN')
-            
+        
+        index_regin=texto_regin_split.index('SMU')
+        index_reginfim=texto_regin_split.index('DIGITAL')
+        despacho_regin = " ".join(texto_regin_split[index_regin:index_reginfim])
+        despacho_regin
+    
         #Printa outras verificações
         st.text('____________________________________________________________________________________________________________')
         st.subheader('Verificação de documentos complementares')
