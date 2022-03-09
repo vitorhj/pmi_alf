@@ -261,12 +261,37 @@ try:
         st.text(str(despacho_regin))
         
         despacho_regin_split = re.sub(' +', ' ',despacho_regin).split(' ')
+        
         EV = 'COMPARTILHADO'
         if EV in despacho_regin_split:
             st.text('*** ESCRITÓRIO VIRTUAL? SIM.')
         if EV not in despacho_regin_split:
             st.text('*** ESCRITÓRIO VIRTUAL? NÃO.')  
-
+       
+        REF = 'REFERÊNCIA'
+        if REF in despacho_regin_split:
+            st.text('*** REFERÊNCIA FISCAL EM RESIDÊNCIA? SIM, consta no despacho.')
+        if REF not in despacho_regin_split:
+            st.text('*** REFERÊNCIA FISCAL EM RESIDÊNCIA? NÃO consta no despacho.')
+        
+        LIC = 'Licenciamento'
+        if LIC in despacho_regin_split:
+            st.text('*** LICENCIAMENTO AMBIENTAL? SIM, consta no despacho.')
+        if LIC not in despacho_regin_split:
+            st.text('*** LICENCIAMENTO AMBIENTAL? NÃO consta no despacho.')
+           
+        PAR = 'PARECER'
+        if REF in despacho_regin_split:
+            st.text('*** PARECER DA DEFESA CIVIL? SIM, consta no despacho.')
+        if REF not in despacho_regin_split:
+            st.text('*** PARECER DA DEFESA CIVIL? NÃO consta no despacho.')
+        
+        COM = 'COMED'
+        if  COM in despacho_regin_split:
+            st.text('*** COMED? SIM, consta no despacho.')
+        if COM not in despacho_regin_split:
+            st.text('*** COMED? NÃO consta no despacho.')
+            
         trecho_regin_cnaes = " ".join(texto_regin_split[index1:index2])
     
         #Printa outras verificações
