@@ -264,33 +264,23 @@ try:
         
         EV = 'COMPARTILHADO'
         if EV in despacho_regin_split:
-            st.text('*** ESCRITÓRIO VIRTUAL? SIM, consta no despacho.')
-        if EV not in despacho_regin_split:
-            st.text('*** ESCRITÓRIO VIRTUAL? NÃO consta no despacho.')  
+            st.text('*** ESCRITÓRIO VIRTUAL.')
        
         REF = 'REFERÊNCIA'
         if REF in despacho_regin_split:
-            st.text('*** REFERÊNCIA FISCAL EM RESIDÊNCIA? SIM, consta no despacho.')
-        if REF not in despacho_regin_split:
-            st.text('*** REFERÊNCIA FISCAL EM RESIDÊNCIA? NÃO consta no despacho.')
+            st.text('*** REFERÊNCIA FISCAL EM RESIDÊNCIA')
         
         LIC = 'Licenciamento'
         if LIC in despacho_regin_split:
-            st.text('*** LICENCIAMENTO AMBIENTAL? SIM, consta no despacho.')
-        if LIC not in despacho_regin_split:
-            st.text('*** LICENCIAMENTO AMBIENTAL? NÃO consta no despacho.')
+            st.text('*** LICENCIAMENTO AMBIENTAL.')
            
         PAR = 'PARECER'
         if REF in despacho_regin_split:
-            st.text('*** PARECER DA DEFESA CIVIL? SIM, consta no despacho.')
-        if REF not in despacho_regin_split:
-            st.text('*** PARECER DA DEFESA CIVIL? NÃO consta no despacho.')
+            st.text('*** PARECER DA DEFESA CIVIL.')
         
         COM = 'COMED'
         if COM in despacho_regin_split:
-            st.text('*** COMED? SIM, consta no despacho.')
-        if COM not in despacho_regin_split:
-            st.text('*** COMED? NÃO consta no despacho.')
+            st.text('*** COMED.')
             
         cnove = '9'
         cdez = '10'
@@ -298,9 +288,7 @@ try:
         cdezdois = '10-'
         
         if (cnove or cnovedois or cdez or cdezdois) in despacho_regin_split:
-            st.text('*** (CAMPOS 9 E 10) DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES? SIM, consta no despacho.')
-        if (cnove or cnovedois or cdez or cdezdois) not in despacho_regin_split:
-            st.text('*** (CAMPOS 9 E 10) DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES? NÃO consta no despacho.')
+            st.text('*** DOCUMENTOS/ SOLICITAÇÕES COMPLEMENTARES. (CAMPOS 9 E 10) ')
 
         #Printa outras verificações
         st.text('____________________________________________________________________________________________________________')
