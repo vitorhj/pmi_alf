@@ -275,8 +275,12 @@ try:
             st.text('*** LICENCIAMENTO AMBIENTAL.')
            
         PAR = 'PARECER'
-        if REF in despacho_regin_split:
+        if PAR in despacho_regin_split:
             st.text('*** PARECER DA DEFESA CIVIL.')
+            
+        ESC = 'ESCRITÓRIO'
+        if ESC in despacho_regin_split:
+            st.text('*** DECLARAÇÃO DE ESCRITÓRIO.')
         
         COM = 'COMED'
         if COM in despacho_regin_split:
