@@ -180,7 +180,7 @@ if somente_cnpj != "":
      numero_somente_cnpj = re.findall(r'\d\d.\d\d-\d-\d\d', somente_cnpj)
 
 if st.sidebar.button('Limpar'):
-     st.somente_cnpj.empty()
+     somente_cnpj=st.empty()
      
      
 #_____________________________________________________________________________________________________________________
