@@ -179,7 +179,7 @@ somente_cnpj = st.sidebar.text_input('CTRL + V do CNPJ:',' ')
 if somente_cnpj != "":
      numero_somente_cnpj = re.findall(r'\d\d.\d\d-\d-\d\d', somente_cnpj)
 
-st.sidebar.button('Limpar'):
+if st.sidebar.button('Limpar'):
      somente_cnpj = st.empty()
      
      
