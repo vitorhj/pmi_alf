@@ -170,7 +170,7 @@ else:
 
 st.sidebar.subheader('Verificação do CNPJ:')
 # Input box do CNPJ
-verific_cnpj = st.sidebar.text_input('CTRL + V do CNPJ:','')
+somente_cnpj = st.sidebar.text_input('CTRL + V do CNPJ:','')
 
 #_____________________________________________________________________________________________________________________
 
