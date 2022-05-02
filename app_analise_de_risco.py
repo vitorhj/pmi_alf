@@ -12,7 +12,7 @@ from PIL import Image
 ##INPUTS DA PÁGINA DO STREAMLIT
 
 st.set_page_config(
-     page_title="ALF Pref de Itajai",
+     page_title="PMI - Processos ALF",
      page_icon="",
      layout="wide",
  )
