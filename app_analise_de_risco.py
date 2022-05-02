@@ -176,7 +176,7 @@ st.sidebar.subheader('Verificação somente do CNPJ:')
 # Input box do CNPJ
 somente_cnpj = st.sidebar.text_input(
      label='CTRL + V do CNPJ:',
-     value="texto",
+     value="",
 )
 
 if somente_cnpj != ' ':
