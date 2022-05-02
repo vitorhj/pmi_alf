@@ -220,7 +220,7 @@ if st.sidebar.button('Limpar'):
 
 ##ESTRUTURA PAGINA VERIFICAÇÃO DE PROCESSOS
 
-st.title('PMI - ANÁLISE DE RISCO')
+st.title('PMI - ALVARÁ EMPRESAS')
 if (texto_aprova or somente_cnpj) == '':
      st.subheader(str('Links úteis'))
      st.markdown('CNPJ: '+str('https://servicos.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp'))
