@@ -22,7 +22,7 @@ st.set_page_config(
 # Input box do aprova
 logo_image = ('./dados/logo.png')
 st.sidebar.image(logo_image, width=200)
-st.sidebar.subheader('Insira os dados aqui:')
+st.sidebar.subheader('Insira os dados do processo:')
 texto_aprova = st.sidebar.text_input('CTRL+  V da página do APROVA:','')
 
 if texto_aprova != "":
