@@ -12,7 +12,7 @@ from PIL import Image
 ##INPUTS DA PÁGINA DO STREAMLIT
 
 st.set_page_config(
-     page_title="PMI - Processos ALF",
+     page_title="PMI - Empresas Alvará",
      page_icon=('./dados/favicon.png'),
      layout="wide",
  )
