@@ -171,10 +171,10 @@ else:
 
 ## VERIFICA SOMENTE O CNPJ
 
-st.sidebar.subheader('Verificação somente do CNPJ:')
+st.sidebar.subheader('Verificação somente do CNPJ:', key=f3)
 
 # Input box do CNPJ
-somente_cnpj = st.sidebar.text_input('CTRL + V do CNPJ:',' ')
+somente_cnpj = st.sidebar.text_input(label='CTRL + V do CNPJ:',' ')
 
 if somente_cnpj != "":
      numero_somente_cnpj = re.findall(r'\d\d.\d\d-\d-\d\d', somente_cnpj)
@@ -182,6 +182,8 @@ if somente_cnpj != "":
 if st.sidebar.button('Limpar'):
      somente_cnpj=st.empty()
 
+def clear_form():
+    st.session_state["f3"] = ""
 clear = st.form_submit_button(label="Clear", on_click=clear_form)  
      
 #_____________________________________________________________________________________________________________________
