@@ -182,9 +182,9 @@ if somente_cnpj != "":
 if st.sidebar.button('Limpar'):
      somente_cnpj=st.empty()
 
-def clear_form():
-    st.session_state["f3"] = ""
-clear = st.form_submit_button(label="Clear", on_click=clear_form)  
+#def clear_form():
+    #st.session_state["f3"] = ""
+#clear = st.form_submit_button(label="Clear", on_click=clear_form)  
      
 #_____________________________________________________________________________________________________________________
 
