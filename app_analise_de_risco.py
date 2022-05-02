@@ -178,7 +178,7 @@ somente_cnpj = st.sidebar.text_input('CTRL + V do CNPJ:',' ')
 
 if somente_cnpj != ' ':
     cnae_cnpj2 = re.findall(r'\d\d.\d\d-\d-\d\d', somente_cnpj)
-    #cnae_principal_cnpj2=cnae_cnpj[0]
+    cnae_principal_cnpj2=cnae_cnpj2[0]
     numero_cnpj2 = re.findall(r'\d\d.\d\d\d.\d\d\d/\d\d\d\d-\d\d', somente_cnpj)
 
     texto_cnpj_split = re.sub(' +', ' ',somente_cnpj).split(' ')
@@ -230,8 +230,8 @@ if texto_aprova == '':
 try:
      if somente_cnpj != ' ':
           st.subheader(str('Verificação das atividades no CNPJ'))
-          st.text(cnae_cnpj2)
-          st.text(razao_social_cnpj2)
+          st.text('CNPJ: '+numero_cnpj2)
+          st.text('RAZÃO SOCIAL: '+razao_social_cnpj2)
           st.text('ENDEREÇO: '+logradouro_cnpj2+', '+numeropredial_cnpj2+', '+bairro_cnpj2+' '+complemento_cnpj2)         
 except:
   pass
