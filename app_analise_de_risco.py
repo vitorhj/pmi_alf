@@ -229,8 +229,10 @@ if texto_aprova == '':
 
 try:
      if somente_cnpj != ' ':
-          st.subheader(str('Deu certo!'))
-          
+          st.subheader(str('Verificação das atividades no CNPJ'))
+          st.text(cnae_cnpj2)
+          st.text(razao_social_cnpj2)
+          st.text(logradouro_cnpj2)         
 except:
   pass
      
