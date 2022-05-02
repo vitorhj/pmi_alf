@@ -177,7 +177,36 @@ st.sidebar.subheader('Verificação somente do CNPJ:')
 somente_cnpj = st.sidebar.text_input('CTRL + V do CNPJ:',' ')
 
 if somente_cnpj != "":
-     numero_somente_cnpj = re.findall(r'\d\d.\d\d-\d-\d\d', somente_cnpj)
+    cnaes_cnpj = re.findall(r'\d\d.\d\d-\d-\d\d', somente_cnpj)
+    cnae_principal_cnpj=cnaes_cnpj[0]
+    numero_cnpj = re.findall(r'\d\d.\d\d\d.\d\d\d/\d\d\d\d-\d\d', somente_cnpj)
+    texto_cnpj_split = re.sub(' +', ' ',somente_cnpj).split(' ')
+
+    #Separa o cartão cnpj em elementos separado por espaços para extração de textos específicos
+    itens_analise=['EMPRESARIAL','TÍTULO', 'LOGRADOURO','NÚMERO']
+    index_cnpj1=texto_cnpj_split.index('EMPRESARIAL')+1
+    index_cnpj2=texto_cnpj_split.index('TÍTULO')
+    razao_social_cnpj = " ".join(texto_cnpj_split[index_cnpj1:index_cnpj2])
+
+    #Separa o primeiro split para puxar o endereço
+    index_cnpj3=texto_cnpj_split.index('NATUREZA')+1
+    index_cnpj4=texto_cnpj_split.index('ESPECIAL')
+    texto_cnpj_split2 = texto_cnpj_split[index_cnpj3:index_cnpj4] #função que separa o primeiro split
+    index_cnpj5=texto_cnpj_split2.index('LOGRADOURO')+1
+    index_cnpj6=texto_cnpj_split2.index('NÚMERO')
+    logradouro_cnpj = " ".join(texto_cnpj_split2[index_cnpj5:index_cnpj6])
+    index_cnpj7=texto_cnpj_split2.index('NÚMERO')+1
+    index_cnpj8=texto_cnpj_split2.index('COMPLEMENTO')
+    numeropredial_cnpj = " ".join(texto_cnpj_split2[index_cnpj7:index_cnpj8])
+    index_cnpj9=texto_cnpj_split2.index('COMPLEMENTO')+1
+    index_cnpj10=texto_cnpj_split2.index('CEP')
+    complemento_cnpj = " ".join(texto_cnpj_split2[index_cnpj9:index_cnpj10])
+    index_cnpj11=texto_cnpj_split2.index('BAIRRO/DISTRITO')+1
+    index_cnpj12=texto_cnpj_split2.index('MUNICÍPIO')
+    bairro_cnpj = " ".join(texto_cnpj_split2[index_cnpj11:index_cnpj12])
+
+else:
+    razao_social_cnpj = ""
 
 if st.sidebar.button('Limpar'):
      somente_cnpj=st.empty()
@@ -191,10 +220,11 @@ if st.sidebar.button('Limpar'):
 ##ESTRUTURA PAGINA
 
 st.title('PMI - ANÁLISE DE RISCO')
-st.subheader(str('Links úteis'))
-st.markdown('CNPJ: '+str('https://servicos.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp'))
-st.markdown('REGIN: '+str('http://regin.jucesc.sc.gov.br/regin.externo/CON_ViabilidadeSelecaoExternoV4.aspx?'))
-st.markdown('GEO: '+str('https://geoitajai.github.io/geo/plantacadastral.html'))   
+if texto_aprova = "":
+     st.subheader(str('Links úteis'))
+     st.markdown('CNPJ: '+str('https://servicos.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp'))
+     st.markdown('REGIN: '+str('http://regin.jucesc.sc.gov.br/regin.externo/CON_ViabilidadeSelecaoExternoV4.aspx?'))
+     st.markdown('GEO: '+str('https://geoitajai.github.io/geo/plantacadastral.html'))   
 
 try:
     if texto_aprova != "":
