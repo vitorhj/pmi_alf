@@ -176,7 +176,7 @@ st.sidebar.subheader('Verificação somente do CNPJ:')
 # Input box do CNPJ
 somente_cnpj = st.sidebar.text_input('CTRL + V do CNPJ:',' ')
 
-if somente_cnpj != "":
+if somente_cnpj != ' ':
     cnae_cnpj = re.findall(r'\d\d.\d\d-\d-\d\d', somente_cnpj)
     cnae_principal_cnpj=cnae_cnpj[0]
     numero_cnpj = re.findall(r'\d\d.\d\d\d.\d\d\d/\d\d\d\d-\d\d', somente_cnpj)
