@@ -230,7 +230,7 @@ if texto_aprova == '':
 
 try:
      if somente_cnpj != ' ':
-          st.subheader(str('Verificação das atividades no CNPJ'))
+          st.subheader(str('Dados do cartão CNPJ'))
           #st.text('CNPJ: '+numero_cnpj2)
           st.markdown('RAZÃO SOCIAL: '+razao_social_cnpj2)
           st.markdown('ENDEREÇO: '+logradouro_cnpj2+', '+numeropredial_cnpj2+', '+bairro_cnpj2+' '+complemento_cnpj2)         
