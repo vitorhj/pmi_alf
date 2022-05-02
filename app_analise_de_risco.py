@@ -181,7 +181,8 @@ if somente_cnpj != "":
 
 if st.sidebar.button('Limpar'):
      somente_cnpj=st.empty()
-     
+
+clear = st.form_submit_button(label="Clear", on_click=clear_form)  
      
 #_____________________________________________________________________________________________________________________
 
