@@ -211,11 +211,14 @@ else:
 
 #if st.sidebar.button('Limpar'):
      #somente_cnpj=st.empty()
+     
+#_____________________________________________________________________________________________________________________
 
+##BOTÃO LIMPAR
 
 def clear_text():
     st.session_state["cnpj2"] = ""
-st.button("Limpar", on_click=clear_text)
+st.sidebar.button("Limpar", on_click=clear_text)
 
      
 #_____________________________________________________________________________________________________________________
