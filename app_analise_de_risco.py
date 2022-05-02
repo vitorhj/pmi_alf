@@ -17,6 +17,7 @@ st.set_page_config(
      layout="wide",
  )
 
+#______________________________________________________________________________________________________________________
 ## EXTRAI INFORMAÇÕES DO APROVA ##
 
 # Input box do aprova
@@ -168,12 +169,15 @@ else:
 
 #_____________________________________________________________________________________________________________________
 
-#st.sidebar.subheader('Verificação do CNPJ:')
-# Input box do CNPJ
-#somente_cnpj = st.sidebar.text_input('CTRL + V do CNPJ:','')
+## VERIFICA SOMENTE O CNPJ
 
-#if somente_cnpj != "":
-     #numero_somente_cnpj = re.findall(r'\d\d.\d\d-\d-\d\d', somente_cnpj)
+st.sidebar.subheader('Verificação do CNPJ:')
+
+# Input box do CNPJ
+somente_cnpj = st.sidebar.text_input('CTRL + V do CNPJ:','')
+
+if somente_cnpj != "":
+     numero_somente_cnpj = re.findall(r'\d\d.\d\d-\d-\d\d', somente_cnpj)
 
 #_____________________________________________________________________________________________________________________
 
