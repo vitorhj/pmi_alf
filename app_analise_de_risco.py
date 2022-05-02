@@ -179,7 +179,7 @@ somente_cnpj = st.sidebar.text_input(
      value="",
 )
 
-if somente_cnpj != ' ':
+if somente_cnpj != "":
     cnae_cnpj2 = re.findall(r'\d\d.\d\d-\d-\d\d', somente_cnpj)
     #cnae_principal_cnpj2=cnae_cnpj2[0]
     numero_cnpj2 = re.findall(r'\d\d.\d\d\d.\d\d\d/\d\d\d\d-\d\d', somente_cnpj)
@@ -232,7 +232,7 @@ if texto_aprova == '':
      st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
 
 try:
-     if somente_cnpj != ' ':
+     if somente_cnpj != "":
           st.subheader(str('Dados do cartão CNPJ'))
           #st.text('CNPJ: '+numero_cnpj2)
           st.markdown('RAZÃO SOCIAL: '+razao_social_cnpj2)
