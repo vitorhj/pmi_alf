@@ -174,7 +174,7 @@ else:
 st.sidebar.subheader('Verificação somente do CNPJ:')
 
 # Input box do CNPJ
-somente_cnpj = st.sidebar.text_input('CTRL + V do CNPJ: ','')
+somente_cnpj = st.sidebar.text_input('CTRL + V do CNPJ: ','',key="cnpj2")
 
 if somente_cnpj != "":
     cnae_cnpj2 = re.findall(r'\d\d.\d\d-\d-\d\d', somente_cnpj)
@@ -209,12 +209,14 @@ if somente_cnpj != "":
 else:
    razao_social_cnpj = ""
 
-if st.sidebar.button('Limpar'):
-     somente_cnpj=st.empty()
+#if st.sidebar.button('Limpar'):
+     #somente_cnpj=st.empty()
 
-#def clear_form():
-    #st.session_state["f3"] = ""
-#clear = st.form_submit_button(label="Clear", on_click=clear_form)  
+
+def clear_text():
+    st.session_state["cnpj2"] = ""
+st.button("Limpar", on_click=clear_text)
+
      
 #_____________________________________________________________________________________________________________________
 
