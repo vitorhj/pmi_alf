@@ -13,7 +13,7 @@ from PIL import Image
 
 st.set_page_config(
      page_title="PMI - Processos ALF",
-     page_icon=('./dados/logo.png'),
+     page_icon=('./dados/favicon.png'),
      layout="wide",
  )
 
