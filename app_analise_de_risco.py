@@ -232,7 +232,7 @@ try:
           st.subheader(str('Verificação das atividades no CNPJ'))
           st.text(cnae_cnpj2)
           st.text(razao_social_cnpj2)
-          st.text(logradouro_cnpj2)         
+          st.text('Endereço:'+logradouro_cnpj2+','+','+bairro_cnpj2+','+complemento_cnpj2)         
 except:
   pass
      
