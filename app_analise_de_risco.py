@@ -24,7 +24,7 @@ st.set_page_config(
 logo_image = ('./dados/logo.png')
 st.sidebar.image(logo_image, width=200)
 st.sidebar.subheader('Verificação do processo:')
-texto_aprova = st.sidebar.text_input('CTRL+  V da página do APROVA:','')
+texto_aprova = st.sidebar.text_input('CTRL+  V da página do APROVA:','',key="inputbox1")
 
 if texto_aprova != "":
     #Separa o texto do aprova entre os trechos viabilidade e estabelecimento
@@ -95,7 +95,7 @@ else:
 ## EXTRAI INFORMAÇÕES DO REGIN ##
 
 # Input box do REGIN
-texto_regin = st.sidebar.text_input('CTRL + V do REGIN:','')
+texto_regin = st.sidebar.text_input('CTRL + V do REGIN:','',key="inputbox2")
 
 if texto_regin != "":
     #Extrai informações do REGIN
@@ -133,7 +133,7 @@ if texto_regin != "":
 ## EXTRAI INFORMAÇÕES DO CNPJ
 
 # Input box do CNPJ
-texto_cnpj = st.sidebar.text_input('CTRL + V do CNPJ:','')
+texto_cnpj = st.sidebar.text_input('CTRL + V do CNPJ:','',key="inputbox3")
 
 if texto_cnpj != "":
     cnaes_cnpj = re.findall(r'\d\d.\d\d-\d-\d\d', texto_cnpj)
@@ -174,7 +174,7 @@ else:
 st.sidebar.subheader('Verificação somente do CNPJ:')
 
 # Input box do CNPJ
-somente_cnpj = st.sidebar.text_input('CTRL + V do CNPJ: ','',key="cnpj2")
+somente_cnpj = st.sidebar.text_input('CTRL + V do CNPJ: ','',key="inputbox4")
 
 if somente_cnpj != "":
     cnae_cnpj2 = re.findall(r'\d\d.\d\d-\d-\d\d', somente_cnpj)
@@ -217,7 +217,10 @@ else:
 ##BOTÃO LIMPAR
 
 def clear_text():
-    st.session_state["cnpj2"] = ""
+    st.session_state["inputbox1"] = ""
+    st.session_state["inputbox2"] = ""
+    st.session_state["inputbox3"] = ""
+    st.session_state["inputbox4"] = ""
 st.sidebar.button("Limpar", on_click=clear_text)
 
      
