@@ -181,7 +181,7 @@ somente_cnpj = st.sidebar.text_input(
 
 if somente_cnpj != ' ':
     cnae_cnpj2 = re.findall(r'\d\d.\d\d-\d-\d\d', somente_cnpj)
-    cnae_principal_cnpj2=cnae_cnpj2[0]
+    #cnae_principal_cnpj2=cnae_cnpj2[0]
     numero_cnpj2 = re.findall(r'\d\d.\d\d\d.\d\d\d/\d\d\d\d-\d\d', somente_cnpj)
 
     texto_cnpj_split = re.sub(' +', ' ',somente_cnpj).split(' ')
