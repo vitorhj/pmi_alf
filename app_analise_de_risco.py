@@ -178,7 +178,7 @@ somente_cnpj = st.sidebar.text_input('CTRL + V do CNPJ:',
                                     value=" ",
                                     )
 
-if somente_cnpj != "":
+#if somente_cnpj != "":
     #cnae_cnpj2 = re.findall(r'\d\d.\d\d-\d-\d\d', somente_cnpj)
     #cnae_principal_cnpj2=cnae_cnpj2[0]
     #numero_cnpj2 = re.findall(r'\d\d.\d\d\d.\d\d\d/\d\d\d\d-\d\d', somente_cnpj)
@@ -208,11 +208,11 @@ if somente_cnpj != "":
     #index_cnpj12=texto_cnpj_split2.index('MUNICÍPIO')
     #bairro_cnpj2 = " ".join(texto_cnpj_split2[index_cnpj11:index_cnpj12])
 
-else:
-    razao_social_cnpj = ""
+#else:
+   #razao_social_cnpj = ""
 
-if st.sidebar.button('Limpar'):
-     somente_cnpj=st.empty()
+#if st.sidebar.button('Limpar'):
+     #somente_cnpj=st.empty()
 
 #def clear_form():
     #st.session_state["f3"] = ""
