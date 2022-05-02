@@ -226,6 +226,7 @@ if texto_aprova == '':
      st.markdown('CNPJ: '+str('https://servicos.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp'))
      st.markdown('REGIN: '+str('http://regin.jucesc.sc.gov.br/regin.externo/CON_ViabilidadeSelecaoExternoV4.aspx?'))
      st.markdown('GEO: '+str('https://geoitajai.github.io/geo/plantacadastral.html'))
+     st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
 
 try:
      if somente_cnpj != ' ':
@@ -404,9 +405,7 @@ try:
             st.text('*** APRESENTA CNAE para transporte por CABOTAGEM, solicitar autorização da ANTAC.')
         if cnae5 not in cnaes_cnpj:
             st.text('*** NÃO apresenta CNAE para transporte de cabotagem.')
-
-    else:
-        st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
+        
         
 except:
   pass
