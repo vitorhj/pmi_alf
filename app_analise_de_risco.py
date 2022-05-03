@@ -230,6 +230,7 @@ st.sidebar.button("Limpar", on_click=clear_text)
 
 st.title('PMI - ALVARÁ EMPRESAS')
 if (texto_aprova or somente_cnpj) == '':
+     st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
      st.subheader(str('Links úteis'))
      st.markdown('APROVA: '+str('https://itajai.prefeituras.net/login'))
      st.markdown('CNPJ: '+str('https://servicos.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp'))
@@ -240,7 +241,7 @@ if (texto_aprova or somente_cnpj) == '':
      st.markdown('CBMSC NOVO: '+str('https://esci.cbm.sc.gov.br/Safe/PublicoExterno/ControllerConferenciaDigital/'))
      st.markdown('PMI ALVARÁ: '+str('https://portaldocidadao.itajai.sc.gov.br/servico_link/7'))
      st.markdown('PMI TERMO ÚNICO: '+str('https://portaldocidadao.itajai.sc.gov.br/servico.php?id=89'))
-     st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
+     
 
 try:
      if somente_cnpj != "":
