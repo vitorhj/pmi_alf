@@ -278,8 +278,8 @@ try:
         #Printa a verificação da razão social
         st.text('____________________________________________________________________________________________________________')
         st.subheader('Verificação da RAZÃO SOCIAL')
-        st.text(razao_social_cnpj)
-        st.text(razao_social_aprova)
+        st.text('cnpj:'+razao_social_cnpj)
+        st.text('aprova:'+razao_social_aprova)
         if (razao_social_cnpj == razao_social_aprova.upper()):
             st.text('Ok! A razão social inserida corretamento no Aprova.')
         else:
