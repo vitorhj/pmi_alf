@@ -44,15 +44,12 @@ if texto_aprova != "":
     itens_analise=['Razao','Horário']
     index_aprova3=texto_aprova_split.index('Razao')
     index_aprova4=texto_aprova_split.index('Horário')
-    st.text(index_aprova3)
-    st.text( texto_aprova_split[index_aprova3:index_aprova4])
     
     trecho_aprova_split2 = texto_aprova_split[index_aprova3:index_aprova4]
     itens_analise=['Social','Nome']
     index_aprova5=trecho_aprova_split2.index('Social')+1
     index_aprova6=trecho_aprova_split2.index('Nome')
     razao_social_aprova = " ".join(trecho_aprova_split2[index_aprova5:index_aprova6])
-    st.text(razao_social_aprova)
      
 
     #Separa o texto do aprova em espaços para retornar o endereço
@@ -150,6 +147,7 @@ if texto_cnpj != "":
     index_cnpj1=texto_cnpj_split.index('EMPRESARIAL')+1
     index_cnpj2=texto_cnpj_split.index('TÍTULO')
     razao_social_cnpj = " ".join(texto_cnpj_split[index_cnpj1:index_cnpj2])
+    st.text(razao_social_cnpj)
 
     #Separa o primeiro split para puxar o endereço
     index_cnpj3=texto_cnpj_split.index('NATUREZA')+1
@@ -263,7 +261,7 @@ try:
         #Printa o resumo do processo
         st.text('____________________________________________________________________________________________________________')
         st.subheader('Resumo do processo')
-        st.text('RAZÃO SOCIAL: '+razao_social_cnpj+', CNPJ: '+cnpj_aprova[0])
+        st.text('RAZÃO SOCIAL: '+razao_social_aprova+', CNPJ: '+cnpj_aprova[0])
         st.text(logradouro_cnpj+', '+bairro_cnpj+', '+numeropredial_cnpj+', '+complemento_cnpj)
         st.text('INSCRIÇÃO IMOBILIÁRIA: '+str(inscricao_aprova[0:15]))
         endereço_split = re.sub(' +', ' ',logradouro_aprova).split(' ')
