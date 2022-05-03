@@ -43,7 +43,6 @@ if texto_aprova != "":
     #Separa o texto do aprova em espaços para retornar a razão social
     itens_analise=['Razao','Horário']
     index_aprova3=texto_aprova_split.index('Razao')
-    index_aprova3 = index_aprova3[0]
     index_aprova4=texto_aprova_split.index('Horário')
     trecho_aprova_split2 = texto_aprova_split[index_aprova3:index_aprova4]
     itens_analise=['Social','Nome']
