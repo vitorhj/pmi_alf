@@ -44,7 +44,7 @@ if texto_aprova != "":
     itens_analise=['Razao','Horário']
     index_aprova3=texto_aprova_split.index('Razao')
     index_aprova4=texto_aprova_split.index('Horário')
-    st.text('verificação razao social'+index_aprova3)
+    st.text(index_aprova3)
     
     trecho_aprova_split2 = texto_aprova_split[index_aprova3:index_aprova4]
     itens_analise=['Social','Nome']
