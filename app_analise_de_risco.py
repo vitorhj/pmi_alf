@@ -29,10 +29,9 @@ texto_aprova = st.sidebar.text_input('CTRL+  V da página do APROVA:','',key="in
 if texto_aprova != "":
     #Separa o texto do aprova entre os trechos viabilidade e estabelecimento
     texto_aprova_split = re.sub(' +', ' ',texto_aprova).split(' ')
-
-    itens_analise=['Viabilidade','Estabelecimento','Bairro','Logradouro','Número','Social', 'Nome','PRINT']
-    index_aprova1=texto_aprova_split.index('Viabilidade')
-    index_aprova2=texto_aprova_split.index('Estabelecimento')
+    #itens_analise=['Viabilidade','Estabelecimento','Bairro','Logradouro','Número','Social', 'Nome','PRINT']
+    #index_aprova1=texto_aprova_split.index('Viabilidade')
+    #index_aprova2=texto_aprova_split.index('Estabelecimento')
     
     ##Inscrição imobiliária no Aprova Digital
     
@@ -42,9 +41,10 @@ if texto_aprova != "":
     trecho_aprova = " ".join(texto_aprova_split[index_aprova1:index_aprova2])
 
     #Separa o texto do aprova em espaços para retornar a razão social
-    itens_analise=['Identificação','edificação']
-    index_aprova3=texto_aprova_split.index('Identificação')
-    index_aprova4=texto_aprova_split.index('edificação')
+    itens_analise=['Razao','Horário']
+    index_aprova3=texto_aprova_split.index('Razao')
+    index_aprova3=index_aprova3[0]
+    index_aprova4=texto_aprova_split.index('Horário')
     trecho_aprova_split2 = texto_aprova_split[index_aprova3:index_aprova4]
     itens_analise=['Social','Nome']
     index_aprova5=trecho_aprova_split2.index('Social')+1
@@ -52,39 +52,39 @@ if texto_aprova != "":
     razao_social_aprova = " ".join(trecho_aprova_split2[index_aprova5:index_aprova6])
 
     #Separa o texto do aprova em espaços para retornar o endereço
-    itens_analise=['REGIN','Identificação']
-    index_aprova7=texto_aprova_split.index('REGIN')
-    index_aprova8=texto_aprova_split.index('Identificação')
-    trecho_aprova_split3 = texto_aprova_split[index_aprova7:index_aprova8]
-    itens_analise=['Bairro','Logradouro']
-    index_aprova9=trecho_aprova_split3.index('Bairro')+1
-    index_aprova10=trecho_aprova_split3.index('Logradouro')
-    index_aprova11=trecho_aprova_split3.index('Logradouro')+1
-    index_aprova12=trecho_aprova_split3.index('Número')
-    index_aprova13=trecho_aprova_split3.index('Predial')+1
-    index_aprova14=trecho_aprova_split3.index('CEP')
-    bairro_aprova = " ".join(trecho_aprova_split3[index_aprova9:index_aprova10])
-    logradouro_aprova = " ".join(trecho_aprova_split3[index_aprova11:index_aprova12])
-    numero_aprova = " ".join(trecho_aprova_split3[index_aprova13:index_aprova14])
+    #itens_analise=['REGIN','Identificação']
+    #index_aprova7=texto_aprova_split.index('REGIN')
+    #index_aprova8=texto_aprova_split.index('Identificação')
+    #trecho_aprova_split3 = texto_aprova_split[index_aprova7:index_aprova8]
+    #itens_analise=['Bairro','Logradouro']
+    #index_aprova9=trecho_aprova_split3.index('Bairro')+1
+    #index_aprova10=trecho_aprova_split3.index('Logradouro')
+    #index_aprova11=trecho_aprova_split3.index('Logradouro')+1
+    #index_aprova12=trecho_aprova_split3.index('Número')
+    #index_aprova13=trecho_aprova_split3.index('Predial')+1
+    #index_aprova14=trecho_aprova_split3.index('CEP')
+    #bairro_aprova = " ".join(trecho_aprova_split3[index_aprova9:index_aprova10])
+    #logradouro_aprova = " ".join(trecho_aprova_split3[index_aprova11:index_aprova12])
+    #numero_aprova = " ".join(trecho_aprova_split3[index_aprova13:index_aprova14])
 
-    index_aprova17=trecho_aprova_split3.index('Sala)')
-    index_aprova18=trecho_aprova_split3.index('(Sala)')
-    index_aprova19=trecho_aprova_split3.index('(Box)')
-    index_aprova20=trecho_aprova_split3.index('Telefone')
-    complemento1_aprova = " ".join(trecho_aprova_split3[index_aprova17+1:index_aprova18-2])
-    complemento2_aprova = " ".join(trecho_aprova_split3[index_aprova18+1:index_aprova19-2])
-    complemento3_aprova = " ".join(trecho_aprova_split3[index_aprova19+1:index_aprova20])
+    #index_aprova17=trecho_aprova_split3.index('Sala)')
+    #index_aprova18=trecho_aprova_split3.index('(Sala)')
+    #index_aprova19=trecho_aprova_split3.index('(Box)')
+    #index_aprova20=trecho_aprova_split3.index('Telefone')
+    #complemento1_aprova = " ".join(trecho_aprova_split3[index_aprova17+1:index_aprova18-2])
+    #complemento2_aprova = " ".join(trecho_aprova_split3[index_aprova18+1:index_aprova19-2])
+    #complemento3_aprova = " ".join(trecho_aprova_split3[index_aprova19+1:index_aprova20])
 
     #Extrai as informações do trecho
     cnaes_aprova = re.findall(r'\d\d.\d\d-\d-\d\d', texto_aprova)
     cnaes_aprova=list(set(cnaes_aprova))
 
-    itens_analise=['Identificação','edificação']
-    index_aprova15=texto_aprova_split.index('Identificação')
-    index_aprova16=texto_aprova_split.index('edificação')
-    trecho_aprova_split4 = texto_aprova_split[index_aprova15:index_aprova16]
-    trecho_aprova_cnpj = " ".join(trecho_aprova_split4)
-    cnpj_aprova = re.findall(r'\d\d.\d\d\d.\d\d\d/\d\d\d\d-\d\d', trecho_aprova_cnpj)
+    #itens_analise=['Identificação','edificação']
+    #index_aprova15=texto_aprova_split.index('Identificação')
+    #index_aprova16=texto_aprova_split.index('edificação')
+    #trecho_aprova_split4 = texto_aprova_split[index_aprova15:index_aprova16]
+    #trecho_aprova_cnpj = " ".join(trecho_aprova_split4)
+    #cnpj_aprova = re.findall(r'\d\d.\d\d\d.\d\d\d/\d\d\d\d-\d\d', trecho_aprova_cnpj)
 
 
 else:
