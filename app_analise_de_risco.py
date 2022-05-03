@@ -147,7 +147,6 @@ if texto_cnpj != "":
     index_cnpj1=texto_cnpj_split.index('EMPRESARIAL')+1
     index_cnpj2=texto_cnpj_split.index('TÍTULO')
     razao_social_cnpj = " ".join(texto_cnpj_split[index_cnpj1:index_cnpj2])
-    st.text(razao_social_cnpj)
 
     #Separa o primeiro split para puxar o endereço
     index_cnpj3=texto_cnpj_split.index('NATUREZA')+1
@@ -166,8 +165,6 @@ if texto_cnpj != "":
     index_cnpj12=texto_cnpj_split2.index('MUNICÍPIO')
     bairro_cnpj = " ".join(texto_cnpj_split2[index_cnpj11:index_cnpj12])
 
-else:
-    razao_social_cnpj = ""
 
 #_____________________________________________________________________________________________________________________
 
