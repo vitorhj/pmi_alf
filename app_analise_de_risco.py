@@ -236,6 +236,7 @@ if (texto_aprova or somente_cnpj) == '':
      st.markdown('REGIN: '+str('http://regin.jucesc.sc.gov.br/regin.externo/CON_ViabilidadeSelecaoExternoV4.aspx?'))
      st.markdown('GEO: '+str('https://geoitajai.github.io/geo/plantacadastral.html'))
      st.markdown('GEO NOVO: '+str('https://arcgis.itajai.sc.gov.br/geoitajai/app-externo/'))
+     st.markdown('CBMSC: '+str('https://sigat.cbm.sc.gov.br/sigat/modulos/solicitacoes/acessocidadao2.php'))
      st.markdown('CBMSC NOVO: '+str('https://esci.cbm.sc.gov.br/Safe/PublicoExterno/ControllerConferenciaDigital/'))
      st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
 
