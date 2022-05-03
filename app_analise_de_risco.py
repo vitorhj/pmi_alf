@@ -211,7 +211,7 @@ if somente_cnpj != "":
     bairro_cnpj2 = " ".join(texto_cnpj_split2[index_cnpj11:index_cnpj12])
 
 else:
-   razao_social_cnpj = ""
+   razao_social_cnpj2 = ""
 
 #if st.sidebar.button('Limpar'):
      #somente_cnpj=st.empty()
