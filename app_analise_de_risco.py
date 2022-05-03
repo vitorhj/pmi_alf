@@ -234,7 +234,8 @@ if (texto_aprova or somente_cnpj) == '':
      st.markdown('CNPJ: '+str('https://servicos.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp'))
      st.markdown('REGIN: '+str('http://regin.jucesc.sc.gov.br/regin.externo/CON_ViabilidadeSelecaoExternoV4.aspx?'))
      st.markdown('GEO: '+str('https://geoitajai.github.io/geo/plantacadastral.html'))
-     st.markdown('NOVO GEO: '+str('https://arcgis.itajai.sc.gov.br/geoitajai/app-externo/'))
+     st.markdown('GEO NOVO: '+str('https://arcgis.itajai.sc.gov.br/geoitajai/app-externo/'))
+     st.markdown('CBSC NOVO: '+str('https://esci.cbm.sc.gov.br/Safe/PublicoExterno/ControllerConferenciaDigital/'))
      st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
 
 try:
