@@ -238,6 +238,8 @@ if (texto_aprova or somente_cnpj) == '':
      st.markdown('GEO NOVO: '+str('https://arcgis.itajai.sc.gov.br/geoitajai/app-externo/'))
      st.markdown('CBMSC: '+str('https://sigat.cbm.sc.gov.br/sigat/modulos/solicitacoes/acessocidadao2.php'))
      st.markdown('CBMSC NOVO: '+str('https://esci.cbm.sc.gov.br/Safe/PublicoExterno/ControllerConferenciaDigital/'))
+     st.markdown('PMI ALVARÁ: '+str('https://portaldocidadao.itajai.sc.gov.br/servico_link/7'))
+     st.markdown('PMI TERMO ÚNICO: '+str('https://portaldocidadao.itajai.sc.gov.br/servico.php?id=89'))
      st.markdown('<<< Copie e cole as informações na barra lateral esquerda.')
 
 try:
