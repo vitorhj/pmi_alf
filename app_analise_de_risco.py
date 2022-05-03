@@ -52,6 +52,8 @@ if texto_aprova != "":
     index_aprova5=trecho_aprova_split2.index('Social')+1
     index_aprova6=trecho_aprova_split2.index('Nome')
     razao_social_aprova = " ".join(trecho_aprova_split2[index_aprova5:index_aprova6])
+    st.text(razao_social_aprova)
+     
 
     #Separa o texto do aprova em espaços para retornar o endereço
     itens_analise=['REGIN','Razao']
