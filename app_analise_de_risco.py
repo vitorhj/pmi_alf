@@ -183,6 +183,7 @@ if somente_cnpj != "":
     cnaes_cnpj2 = re.findall(r'\d\d.\d\d-\d-\d\d', somente_cnpj)
     cnae_principal_cnpj2=cnaes_cnpj2[0]
     numero_cnpj2 = re.findall(r'\d\d.\d\d\d.\d\d\d/\d\d\d\d-\d\d', somente_cnpj)
+
     texto_cnpj2_split = re.sub(' +', ' ',somente_cnpj).split(' ')
 
     #Separa o cartão cnpj em elementos separado por espaços para extração de textos específicos
@@ -195,17 +196,18 @@ if somente_cnpj != "":
     index_cnpj3=texto_cnpj2_split.index('NATUREZA')+1
     index_cnpj4=texto_cnpj2_split.index('ESPECIAL')
     texto_cnpj_split2 = texto_cnpj2_split[index_cnpj3:index_cnpj4] #função que separa o primeiro split
-    index_cnpj5=texto_cnpj2_split2.index('LOGRADOURO')+1
-    index_cnpj6=texto_cnpj2_split2.index('NÚMERO')
+    
+    index_cnpj5=texto_cnpj_split2.index('LOGRADOURO')+1
+    index_cnpj6=texto_cnpj_split2.index('NÚMERO')
     logradouro_cnpj2 = " ".join(texto_cnpj_split2[index_cnpj5:index_cnpj6])
-    index_cnpj7=texto_cnpj2_split2.index('NÚMERO')+1
-    index_cnpj8=texto_cnpj2_split2.index('COMPLEMENTO')
+    index_cnpj7=texto_cnpj_split2.index('NÚMERO')+1
+    index_cnpj8=texto_cnpj_split2.index('COMPLEMENTO')
     numeropredial_cnpj2 = " ".join(texto_cnpj_split2[index_cnpj7:index_cnpj8])
-    index_cnpj9=texto_cnpj2_split2.index('COMPLEMENTO')+1
-    index_cnpj10=texto_cnpj2_split2.index('CEP')
-    complemento_cnpj2 = " ".join(texto_cnpj2_split2[index_cnpj9:index_cnpj10])
-    index_cnpj11=texto_cnpj2_split2.index('BAIRRO/DISTRITO')+1
-    index_cnpj12=texto_cnpj2_split2.index('MUNICÍPIO')
+    index_cnpj9=texto_cnpj_split2.index('COMPLEMENTO')+1
+    index_cnpj10=texto_cnpj_split2.index('CEP')
+    complemento_cnpj2 = " ".join(texto_cnpj_split2[index_cnpj9:index_cnpj10])
+    index_cnpj11=texto_cnpj_split2.index('BAIRRO/DISTRITO')+1
+    index_cnpj12=texto_cnpj_split2.index('MUNICÍPIO')
     bairro_cnpj2 = " ".join(texto_cnpj_split2[index_cnpj11:index_cnpj12])
 
 else:
