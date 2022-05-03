@@ -184,6 +184,7 @@ if somente_cnpj != "":
     cnae_principal_cnpj2=cnae_cnpj2[0]
     numero_cnpj2 = re.findall(r'\d\d.\d\d\d.\d\d\d/\d\d\d\d-\d\d', somente_cnpj)
     st.text('cnpj:'+numero_cnpj2)
+    st.text('cnae principal:'+cnae_principal_cnpj2)
 
     texto_cnpj_split = re.sub(' +', ' ',somente_cnpj).split(' ')
 
