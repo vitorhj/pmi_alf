@@ -30,8 +30,8 @@ if texto_aprova != "":
     #Separa o texto do aprova entre os trechos viabilidade e estabelecimento
     texto_aprova_split = re.sub(' +', ' ',texto_aprova).split(' ')
     #itens_analise=['Viabilidade','Estabelecimento','Bairro','Logradouro','Número','Social', 'Nome','PRINT']
-    #index_aprova1=texto_aprova_split.index('Viabilidade')
-    #index_aprova2=texto_aprova_split.index('Estabelecimento')
+    index_aprova1=texto_aprova_split.index('Selecione')
+    index_aprova2=texto_aprova_split.index('Horário')
     
     ##Inscrição imobiliária no Aprova Digital
     
