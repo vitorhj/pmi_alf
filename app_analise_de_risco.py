@@ -169,7 +169,6 @@ if texto_cnpj != "":
     index_cnpj12=texto_cnpj_split2.index('MUNICÍPIO')
     bairro_cnpj = " ".join(texto_cnpj_split2[index_cnpj11:index_cnpj12])
 
-    st.text(razao_social_cnpj)
 
 #_____________________________________________________________________________________________________________________
 
@@ -283,8 +282,6 @@ try:
         #Printa a verificação da razão social
         st.text('____________________________________________________________________________________________________________')
         st.subheader('Verificação da RAZÃO SOCIAL')
-        st.text('cnpj:'+razao_social_cnpj)
-        st.text('aprova:'+razao_social_aprova)
         if (razao_social_cnpj == razao_social_aprova.upper()):
             st.text('Ok! A razão social inserida corretamento no Aprova.')
         else:
