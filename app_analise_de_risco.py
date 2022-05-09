@@ -245,6 +245,8 @@ if (texto_aprova or somente_cnpj) == '':
      st.markdown('DRIVE: '+str('https://drive.google.com/drive/folders/1LfDRxkb8Tv6fspqjBGuToB0xAQO-xGDv?usp=sharing'))
      st.markdown('APP CMGDT: '+str('https://arcgis.itajai.sc.gov.br/portal/apps/webappviewer/index.html?id=c7fefa2b76864a969ee922add9e02fd3#'))
      st.markdown('APP SETORES: '+str('https://arcgis.itajai.sc.gov.br/portal/apps/webappviewer/index.html?id=ab4e19d77cc547968dce80dce054d8db'))
+     st.markdown('MEI: '+str('https://docs.google.com/spreadsheets/d/1bnRz4OJd5IAaZ5QtXHT0gxf2w3WPnMprbsG1WLdyenc/edit?usp=sharing'))
+     st.markdown('ESCRITÓRIOS VIRTUAIS: '+str('https://docs.google.com/spreadsheets/d/1J0gHPYf69kp0F9flnAQBqPf8rQ0ScrUVoHN7vxEij30/edit?usp=sharing'))
      
 #_____________________________________________________________________________________________________________________
 
