@@ -922,7 +922,7 @@ codigo,descricao,la,outros_documentos
 51.11-1-00,Transporte aéreo de passageiros regular,Não,-
 51.12-9-01,Serviço de táxi aéreo e locação de aeronaves com tripulação,Não,-
 51.12-9-99,Outros serviços de transporte aéreo de passageiros não regular,Não,-
-51.20-0-00,Transporte aéreo de carga,Não,-
+51.20-0-00,Transporte aéreo de carga,Não,Autorização da ANAC ou termo de alvará provisório
 51.30-7-00,Transporte espacial,Não,-
 52.11-7-01,Armazéns gerais - emissão de warrant,Sim***,Ocupação bombeiros para depósito
 52.11-7-02,Guarda-móveis,Não,-
