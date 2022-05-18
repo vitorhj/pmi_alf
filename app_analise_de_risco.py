@@ -242,6 +242,7 @@ if (texto_aprova or somente_cnpj) == '':
      st.markdown('CBMSC NOVO: '+str('https://esci.cbm.sc.gov.br/Safe/PublicoExterno/ControllerConferenciaDigital/'))
      st.markdown('PMI ALVARÁ: '+str('https://portaldocidadao.itajai.sc.gov.br/servico_link/7'))
      st.markdown('PMI TERMO ÚNICO: '+str('https://portaldocidadao.itajai.sc.gov.br/servico.php?id=89'))
+     st.markdown('ALVARÁ PROVISÓRIO: '+str('https://portaldocidadao.itajai.sc.gov.br/c/88'))
      st.markdown('DRIVE: '+str('https://drive.google.com/drive/folders/1LfDRxkb8Tv6fspqjBGuToB0xAQO-xGDv?usp=sharing'))
      st.markdown('APP CMGDT: '+str('https://arcgis.itajai.sc.gov.br/portal/apps/webappviewer/index.html?id=c7fefa2b76864a969ee922add9e02fd3#'))
      st.markdown('APP SETORES: '+str('https://arcgis.itajai.sc.gov.br/portal/apps/webappviewer/index.html?id=ab4e19d77cc547968dce80dce054d8db'))
