@@ -684,7 +684,7 @@ codigo,descricao,la,outros_documentos
 45.20-0-06,Serviços de borracharia para veículos automotores,Sim,-
 45.30-7-02,Comércio por atacado de pneumáticos e câmaras-de-ar,Não,-
 45.30-7-04,Comércio a varejo de peças e acessórios usados para veículos automotores,Sim,-
-45.30-7-05,Comércio a varejo de pneumáticos e câmaras-de-ar,Sim,-
+45.30-7-05,Comércio a varejo de pneumáticos e câmaras-de-ar,Sim***,Verificar se não é borracharia. Caso seja, pedir LA
 45.43-9-00,Manutenção e reparação de motocicletas e motonetas,Sim,-
 46.11-7-00,Representantes comerciais e agentes do comércio de matérias-primas agrícolas e animais vivos,Não,-
 46.12-5-00,"Representantes comerciais e agentes do comércio de combustíveis, minerais, produtos siderúrgicos e químicos",Não,-
