@@ -305,7 +305,7 @@ try:
 except:
   pass
 
-tabela_risco = pd.read_csv('./dados/grau_de_risco.csv', sep=';')
+tabela_risco = pd.read_csv('./dados/Decreto 11.985 - Grau de risco.csv', sep=';')
 
 #_____________________________________________________________________________________________________________________
 
