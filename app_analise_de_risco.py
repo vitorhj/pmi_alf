@@ -307,7 +307,7 @@ try:
           tabela_risco = pd.read_csv('./dados/Decreto 11.985 - Grau de risco.csv', sep=',')
           
           cnaes_cnpj2 = pd.DataFrame(cnaes_cnpj2)        
-          nova_tabela2=tabela_risco.merge(cnaes_cnpj2,left_on='codigo', right_on=0)
+          nova_tabela2=tabela_risco.merge(cnaes_cnpj2,left_on='CÓDIGO', right_on=0)
           nova_tabela2.drop([0], axis=1, inplace=True)
           nova_tabela2
           
