@@ -261,7 +261,9 @@ try:
           st.markdown('ENDEREÇO: '+logradouro_cnpj2+', '+numeropredial_cnpj2+', '+bairro_cnpj2+' '+complemento_cnpj2)
           st.subheader('Verificação das atividades')
           
-          tabela_cnaes = pd.read_csv('./dados/grau_risco_maio_2021.xlsx - Página2.csv', sep=',')       
+          tabela_cnaes = pd.read_csv('./dados/grau_risco_maio_2021.xlsx - Página2.csv', sep=',')
+          tabela_risco = pd.read_csv('./dados/Decreto 11.985 - Grau de risco.csv', sep=',')
+          
           cnaes_cnpj2 = pd.DataFrame(cnaes_cnpj2)
         
           nova_tabela=tabela_cnaes.merge(cnaes_cnpj2,left_on='codigo', right_on=0)
