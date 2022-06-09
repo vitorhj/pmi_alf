@@ -259,7 +259,7 @@ try:
           st.markdown('RAZÃO SOCIAL: '+razao_social_cnpj2)
           #st.markdown('CNPJ: '+numero_cnpj2)
           st.markdown('ENDEREÇO: '+logradouro_cnpj2+', '+numeropredial_cnpj2+', '+bairro_cnpj2+' '+complemento_cnpj2)
-          st.subheader('Verificação das atividades')
+          st.subheader('Verificação das atividades e documentação específica')
           
           tabela_cnaes = pd.read_csv('./dados/grau_risco_maio_2021.xlsx - Página2.csv', sep=',')
           
@@ -302,10 +302,19 @@ try:
               st.text('*** APRESENTA CNAE para transporte por CABOTAGEM, solicitar autorização da ANTAC.')
           if cnae5 not in cnaes_cnpj2:
               st.text('*** NÃO apresenta CNAE para transporte de cabotagem.')
+          
+          st.subheader('Verificação do grau de risco')
+          tabela_risco = pd.read_csv('./dados/Decreto 11.985 - Grau de risco.csv', sep=',')
+          
+          cnaes_cnpj2 = pd.DataFrame(cnaes_cnpj2)        
+          nova_tabela2=tabela_risco.merge(cnaes_cnpj2,left_on='codigo', right_on=0)
+          nova_tabela2.drop([0], axis=1, inplace=True)
+          nova_tabela2
+          
 except:
   pass
 
-tabela_risco = pd.read_csv('./dados/Decreto 11.985 - Grau de risco.csv', sep=',')
+
 
 #_____________________________________________________________________________________________________________________
 
