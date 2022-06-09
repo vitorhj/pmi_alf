@@ -487,6 +487,18 @@ try:
             st.text('*** APRESENTA CNAE para transporte por CABOTAGEM, solicitar autorização da ANTAC.')
         if cnae5 not in cnaes_cnpj:
             st.text('*** NÃO apresenta CNAE para transporte de cabotagem.')
+               
+        #Printa outras verificações
+        st.text('____________________________________________________________________________________________________________')
+        st.subheader('Verificação do grau de risco')
+     
+        tabela_risco = pd.read_csv('./dados/Decreto 11.985 - Grau de risco.csv', sep=',')
+          
+        cnaes_cnpj = pd.DataFrame(cnaes_cnpj)        
+        nova_tabela3=tabela_risco.merge(cnaes_cnpj,left_on='CÓDIGO', right_on=0)
+        nova_tabela3.drop([0], axis=1, inplace=True)
+        nova_tabela3
+     
         
         
 except:
