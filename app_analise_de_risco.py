@@ -1,6 +1,6 @@
 #______________________________________________________________________________________________________________________
 
-## IMPORTA BIBLIOTECAS PARA O PYTHON
+## IMPORTA BIBLIOTECAS PARA O PYTHON ##
 
 import pandas as pd
 import re
@@ -9,7 +9,8 @@ import os
 from PIL import Image
 
 #______________________________________________________________________________________________________________________
-##INPUTS DA PÁGINA DO STREAMLIT
+
+## INPUTS DA PÁGINA DO STREAMLIT ##
 
 st.set_page_config(
      page_title="PMI - Empresas Alvará de Funcionamento",
@@ -18,6 +19,7 @@ st.set_page_config(
  )
 
 #______________________________________________________________________________________________________________________
+
 ## EXTRAI INFORMAÇÕES DO APROVA ##
 
 # Input box do aprova
@@ -92,7 +94,6 @@ else:
     cnpj_aprova =""
 #______________________________________________________________________________________________________________________
 
-
 ## EXTRAI INFORMAÇÕES DO REGIN ##
 
 # Input box do REGIN
@@ -126,12 +127,11 @@ if texto_regin != "":
     index6=texto_regin_split.index('SANITÁRIA')-11
     despacho_regin = " ".join(texto_regin_split[index5:index6])
     
-    
-    
+       
 
 #______________________________________________________________________________________________________________________
 
-## EXTRAI INFORMAÇÕES DO CNPJ
+## EXTRAI INFORMAÇÕES DO CNPJ ##
 
 # Input box do CNPJ
 texto_cnpj = st.sidebar.text_input('CTRL + V do CNPJ:','',key="inputbox3")
@@ -172,7 +172,7 @@ if texto_cnpj != "":
 
 #_____________________________________________________________________________________________________________________
 
-## VERIFICA SOMENTE O CNPJ
+## VERIFICA SOMENTE O CNPJ ##
 
 st.sidebar.subheader('Verificação somente do CNPJ:')
 
@@ -215,7 +215,7 @@ else:
      
 #_____________________________________________________________________________________________________________________
 
-##BOTÃO LIMPAR
+## BOTÃO LIMPAR ##
 
 def clear_text():
     st.session_state["inputbox1"] = ""
@@ -227,7 +227,7 @@ st.sidebar.button("Limpar", on_click=clear_text)
      
 #_____________________________________________________________________________________________________________________
 
-##ESTRUTURA PAGINA VERIFICAÇÃO DE PROCESSOS
+## ESTRUTURA PAGINA VERIFICAÇÃO DE PROCESSOS ##
 
 st.title('PMI - ALVARÁ EMPRESAS')
 if (texto_aprova or somente_cnpj) == '':
@@ -249,8 +249,8 @@ if (texto_aprova or somente_cnpj) == '':
      st.markdown('ESCRITÓRIOS VIRTUAIS: '+str('https://docs.google.com/spreadsheets/d/1J0gHPYf69kp0F9flnAQBqPf8rQ0ScrUVoHN7vxEij30/edit?usp=sharing'))
      
 #_____________________________________________________________________________________________________________________
-
-##PÁGINA - SOMENTE CNPJ    
+ 
+## PÁGINA - SOMENTE CNPJ ##  
 
 try:
      if somente_cnpj != "":
@@ -262,7 +262,7 @@ try:
           st.subheader('Verificação das atividades')
           
           tabela_cnaes = pd.read_csv('./dados/grau_risco_maio_2021.xlsx - Página2.csv', sep=',')
-          tabela_risco = pd.read_csv('./dados/Decreto 11.985 - Grau de risco.csv', sep=',')
+          
           
           cnaes_cnpj2 = pd.DataFrame(cnaes_cnpj2)
         
@@ -305,9 +305,11 @@ try:
 except:
   pass
 
+tabela_risco = pd.read_csv('./dados/Decreto 11.985 - Grau de risco.csv', sep=',')
+
 #_____________________________________________________________________________________________________________________
 
-##PÁGINA - CONFERÊNCIA DO PROCESSO
+## PÁGINA - CONFERÊNCIA DO PROCESSO ##
 
 try:
     if texto_aprova != "":
