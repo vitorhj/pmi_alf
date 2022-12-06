@@ -355,7 +355,7 @@ try:
         st.subheader('Verificação do ENDEREÇO')
         st.text('** Verifique manualmente os endereços abaixo:')
         st.text('Endereço no APROVA: '+logradouro_aprova+', '+bairro_aprova+', '+numero_aprova+', '+complemento1_aprova+', '+complemento2_aprova+', '+complemento3_aprova)
-        st.text('Endereço no CNPJ: '+logradouro_aprova+', '+bairro_cnpj+', '+numeropredial_cnpj+', '+complemento_cnpj)
+        st.text('Endereço no CNPJ: '+logradouro_cnpj+', '+bairro_cnpj+', '+numeropredial_cnpj+', '+complemento_cnpj)
         st.text('Endereço no REGIN: '+endereco_regin)
 
         #Printa a verificação dos cnaes
@@ -377,7 +377,7 @@ try:
         else:
             st.text('Conferência dos CNAEs do APROVA com o REGIN: VERIFICAR! CNAES não coincidem.')
 
-        st.text('VERIFIQUE SE NÃO HOUVE A INSERÇÃO REPETIDA DE CNAES:')
+        st.text('ATENÇÃO! Verifique manualmente se não houve inserção REPETIDA de CNAES no Aprova Digital. Abaixo o número de atividades por valores únicos (exclui repetidos)')
         nome_contagem = pd.Series(['Aprova Digital', 'Cartão CNPJ', 'REGIN'])      
         n_cnaes=([len(cnaes_aprova),len(cnaes_cnpj),len(cnaes_formatados_regin)])
         st.dataframe({'LOCAL':nome_contagem,'Nº DE CNAES':n_cnaes})
