@@ -14,7 +14,6 @@ import os
 st.set_page_config(
      page_title="PMI - Empresas Alvará de Funcionamento",
      page_icon=('./dados/favicon.png'),
-     layout="wide",
  )
 
 #______________________________________________________________________________________________________________________
