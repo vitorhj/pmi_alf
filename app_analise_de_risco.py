@@ -3,10 +3,9 @@
 ## IMPORTA BIBLIOTECAS PARA O PYTHON ##
 
 import pandas as pd
-import re
 import streamlit as st
+import re
 import os
-from PIL import Image
 
 #______________________________________________________________________________________________________________________
 
